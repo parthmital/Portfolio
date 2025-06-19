@@ -1,0 +1,376 @@
+:root {
+  --black-color: #000;
+  --dark-grey-color: #111;
+  --grey-color: #a5a5a5;
+  --white-color: #fff;
+  --accent-color: #bfff00;
+
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-36: 36px;
+  --font-size-72: 72px;
+
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-18: 18px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-64: 64px;
+  --spacing-150: 150px;
+
+  --radius-8: 8px;
+  --radius-16: 16px;
+  --radius-round: 100px;
+
+  --border-width-1: 1px;
+  --border-width-2: 2px;
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --project-card-width: 275px;
+  --project-image-height: 150px;
+  --social-icon-size: 60px;
+  --skill-icon-size: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+Button {
+  all: unset;
+}
+
+body {
+  margin: 0;
+  font-family: Inter;
+  color: var(--white-color);
+  background-color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-64);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.FontRegular {
+  font-weight: var(--font-weight-regular);
+}
+
+.FontSemiBold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.FontBold {
+  font-weight: var(--font-weight-bold);
+}
+
+.Font12 {
+  font-size: var(--font-size-12);
+}
+
+.Font14 {
+  font-size: var(--font-size-14);
+}
+
+.Font16 {
+  font-size: var(--font-size-16);
+}
+
+.Font18 {
+  font-size: var(--font-size-18);
+}
+
+.Font20 {
+  font-size: var(--font-size-20);
+}
+
+.Font24 {
+  font-size: var(--font-size-24);
+}
+
+.Font36 {
+  font-size: var(--font-size-36);
+}
+
+.Font72 {
+  font-size: var(--font-size-72);
+}
+
+.FontBlack {
+  color: var(--black-color);
+}
+
+.FontWhite {
+  color: var(--white-color);
+}
+
+.FontGrey {
+  color: var(--grey-color);
+}
+
+.FontAccent {
+  color: var(--accent-color);
+}
+
+.FontCenter {
+  text-align: center;
+}
+
+.HeaderSection,
+.FooterSection {
+  display: flex;
+  padding: var(--spacing-18) var(--spacing-64);
+  align-items: center;
+  align-self: stretch;
+  background: var(--dark-grey-color);
+}
+
+.HeaderSection {
+  justify-content: space-between;
+}
+
+.FooterSection {
+  justify-content: center;
+}
+
+.HomeSection,
+.AboutSection,
+.ProjectsSection,
+.SkillsSection {
+  padding: 0 var(--spacing-64);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-32);
+  align-self: stretch;
+}
+
+.AboutSection {
+  align-items: flex-start;
+}
+
+.HeaderButtons {
+  display: flex;
+  gap: var(--spacing-24);
+  align-items: center;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-16);
+  white-space: nowrap;
+}
+
+Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-12) var(--spacing-32);
+  border-radius: var(--radius-8);
+}
+
+.Button1 {
+  background: var(--accent-color);
+}
+
+.Button2 {
+  background: transparent;
+  border: var(--border-width-2) solid var(--accent-color);
+  gap: var(--spacing-8);
+}
+
+.SocialIcons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-16);
+}
+
+.ProjectsSectionHeader,
+.SkillsSectionHeader {
+  display: flex;
+  padding: 0 var(--spacing-150);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-16);
+  align-self: stretch;
+}
+
+.Projects {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-24);
+  align-self: stretch;
+  overflow-x: scroll;
+}
+
+.Project,
+.Skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: var(--border-width-1) solid var(--grey-color);
+  border-radius: var(--radius-16);
+}
+
+.Project {
+  width: var(--project-card-width);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.Skill {
+  padding: var(--spacing-24);
+  justify-content: center;
+  gap: var(--spacing-12);
+}
+
+.Project img {
+  width: 100%;
+  height: var(--project-image-height);
+  object-fit: cover;
+}
+
+.ProjectDetails {
+  display: flex;
+  padding: var(--spacing-24);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-16);
+  align-self: stretch;
+}
+
+.ProjectTags {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  align-self: stretch;
+}
+
+.Tag,
+.ProjectTag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-round);
+  background: var(--accent-color);
+}
+
+.Tag {
+  padding: var(--spacing-8) var(--spacing-16);
+}
+
+.ProjectTag {
+  padding: var(--spacing-4) var(--spacing-12);
+}
+
+.Skills {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: var(--spacing-24);
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+svg {
+  aspect-ratio: 1/1;
+}
+
+.SocialIcons svg {
+  width: var(--social-icon-size);
+  height: var(--social-icon-size);
+}
+
+.Skill svg {
+  width: var(--skill-icon-size);
+  height: var(--skill-icon-size);
+}
+
+.HeaderSection .FontGrey :hover,
+Button:hover,
+.SocialIcons svg:hover,
+.Project:hover,
+.Project:hover img,
+.Skill:hover {
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.HeaderSection .FontGrey :hover {
+  color: var(--white-color);
+}
+
+Button:hover,
+.SocialIcons svg:hover,
+.Project:hover img,
+.Skill:hover {
+  transform: scale(1.05);
+}
+
+.Project:hover,
+.Skill:hover {
+  border-color: var(--accent-color);
+}
+
+.HeaderSection .FontGrey :active {
+  color: var(--accent-color);
+}
+
+Button:active,
+.SocialIcons svg:active,
+.Project:active img,
+.Skill:active {
+  transform: scale(1);
+}
+
+@media (max-width: 650px) {
+  :root {
+    --spacing-150: 0;
+    --social-icon-size: 48px;
+  }
+
+  .HeaderButtons {
+    display: none;
+  }
+
+  .HeaderSection,
+  .FooterSection {
+    padding: var(--spacing-18) var(--spacing-32);
+  }
+
+  .HomeSection,
+  .AboutSection,
+  .ProjectsSection,
+  .SkillsSection {
+    padding: 0 var(--spacing-32);
+  }
+
+  .Buttons {
+    flex-direction: column;
+  }
+
+  .AboutSection .Buttons {
+    align-items: flex-start;
+  }
+
+  .HomeSection .Font72 {
+    font-size: var(--font-size-36);
+  }
+}
