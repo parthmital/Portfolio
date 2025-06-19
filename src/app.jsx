@@ -1,6 +1,7 @@
 import './app.css'
 import { Project } from './components/project.jsx'
 import { Skill } from './components/skill.jsx'
+import skillsData from '../skills.json'
 export function App() {
   return (
     <>
@@ -13,7 +14,6 @@ export function App() {
           <p>About</p>
           <p>Projects</p>
           <p>Skills</p>
-          <p>Contact</p>
         </div>
       </div>
       <div className="HomeSection">
@@ -168,16 +168,9 @@ export function App() {
           </p>
         </div>
         <div className="Skills">
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
+          {skillsData.map((skill, index) => (
+            <Skill key={index} name={skill.name} icon={skill.icon} />
+          ))}
         </div>
       </div>
       <div className="FooterSection">

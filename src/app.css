@@ -36,6 +36,7 @@
   --font-weight-bold: 700;
 
   --project-card-width: 275px;
+  --skill-card-width: 125px;
   --project-image-height: 150px;
   --social-icon-size: 60px;
   --skill-icon-size: 60px;
@@ -236,8 +237,9 @@ Button {
 
 .Skill {
   padding: var(--spacing-24);
-  justify-content: center;
   gap: var(--spacing-12);
+  width: var(--skill-card-width);
+  align-self: stretch;
 }
 
 .Project img {
@@ -298,7 +300,7 @@ svg {
   height: var(--social-icon-size);
 }
 
-.Skill svg {
+.Skill img {
   width: var(--skill-icon-size);
   height: var(--skill-icon-size);
 }
@@ -335,12 +337,11 @@ Button:hover,
 
 Button:active,
 .SocialIcons svg:active,
-.Project:active img,
-.Skill:active {
+.Project:active img {
   transform: scale(1);
 }
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
   :root {
     --spacing-150: 0;
     --social-icon-size: 48px;
