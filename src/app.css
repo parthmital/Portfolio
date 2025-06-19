@@ -22,7 +22,6 @@
   --spacing-24: 24px;
   --spacing-32: 32px;
   --spacing-64: 64px;
-  --spacing-150: 150px;
 
   --radius-8: 8px;
   --radius-16: 16px;
@@ -213,7 +212,6 @@ Button {
 .ProjectsSectionHeader,
 .SkillsSectionHeader {
   display: flex;
-  padding: 0 var(--spacing-150);
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-16);
@@ -347,7 +345,6 @@ Button:active,
 
 @media (max-width: 768px) {
   :root {
-    --spacing-150: 0;
     --social-icon-size: 48px;
   }
 
