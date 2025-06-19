@@ -144,6 +144,7 @@ body {
   justify-content: space-between;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 .FooterSection {
@@ -298,11 +299,7 @@ Button {
   flex-wrap: wrap;
 }
 
-svg {
-  aspect-ratio: 1/1;
-}
-
-.SocialIcons svg {
+.SocialIcons img {
   width: var(--social-icon-size);
   height: var(--social-icon-size);
 }
@@ -314,7 +311,7 @@ svg {
 
 .HeaderSection .FontGrey :hover,
 Button:hover,
-.SocialIcons svg:hover,
+.SocialIcons img:hover,
 .Project:hover,
 .Project:hover img,
 .Skill:hover {
@@ -327,7 +324,7 @@ Button:hover,
 }
 
 Button:hover,
-.SocialIcons svg:hover,
+.SocialIcons img:hover,
 .Project:hover img,
 .Skill:hover {
   transform: scale(1.05);
@@ -343,7 +340,7 @@ Button:hover,
 }
 
 Button:active,
-.SocialIcons svg:active,
+.SocialIcons img:active,
 .Project:active img {
   transform: scale(1);
 }
