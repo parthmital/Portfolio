@@ -1,8 +1,18 @@
 import './app.css'
+import { useRef } from 'preact/hooks'
 import { Project } from './components/project.jsx'
 import { Skill } from './components/skill.jsx'
 import skillsData from '../skills.json'
 export function App() {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const skillsRef = useRef(null);
+  const scrollToSection = (ref) => {
+    setTimeout(() => {
+      ref.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 0);
+  };
   return (
     <>
       <div className="HeaderSection">
@@ -10,13 +20,13 @@ export function App() {
           Alex<span className="FontAccent">Chen</span>
         </p>
         <div className="FontGrey Font16 HeaderButtons">
-          <p>Home</p>
-          <p>About</p>
-          <p>Projects</p>
-          <p>Skills</p>
+          <p onClick={() => scrollToSection(homeRef)}>Home</p>
+          <p onClick={() => scrollToSection(aboutRef)}>About</p>
+          <p onClick={() => scrollToSection(projectsRef)}>Projects</p>
+          <p onClick={() => scrollToSection(skillsRef)}>Skills</p>
         </div>
       </div>
-      <div className="HomeSection">
+      <div ref={homeRef} className="HomeSection">
         <p className="Font72 FontBold FontCenter">
           Hi, I'm <span className="FontAccent">Alex Chen</span>
         </p>
@@ -26,7 +36,7 @@ export function App() {
           beautiful design.
         </p>
         <div className="Buttons">
-          <button className="Button1 Font14 FontSemiBold FontBlack">
+          <button onClick={() => scrollToSection(projectsRef)} className="Button1 Font14 FontSemiBold FontBlack">
             View My Work
           </button>
           <button className="Button2">
@@ -112,7 +122,7 @@ export function App() {
           </svg>
         </div>
       </div>
-      <div className="AboutSection">
+      <div ref={aboutRef} className="AboutSection">
         <p className="Font36 FontBold">
           About <span className="FontAccent">Me</span>
         </p>
@@ -139,7 +149,7 @@ export function App() {
           <div className="Tag Font14 FontSemiBold FontBlack">Full-Stack</div>
         </div>
       </div>
-      <div className="ProjectsSection">
+      <div ref={projectsRef} className="ProjectsSection">
         <div className="ProjectsSectionHeader">
           <p className="Font36 FontBold FontCenter">
             Featured <span className="FontAccent">Projects</span>
@@ -157,7 +167,7 @@ export function App() {
           <Project />
         </div>
       </div>
-      <div className="SkillsSection">
+      <div ref={skillsRef} className="SkillsSection">
         <div className="SkillsSectionHeader">
           <p className="Font36 FontBold FontCenter">
             Technical <span className="FontAccent">Skills</span>

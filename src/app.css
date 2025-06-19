@@ -36,8 +36,8 @@
   --font-weight-bold: 700;
 
   --project-card-width: 275px;
+  --project-image-height: 175px;
   --skill-card-width: 125px;
-  --project-image-height: 150px;
   --social-icon-size: 60px;
   --skill-icon-size: 60px;
 }
@@ -142,6 +142,8 @@ body {
 
 .HeaderSection {
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
 }
 
 .FooterSection {
@@ -157,6 +159,11 @@ body {
   flex-direction: column;
   gap: var(--spacing-32);
   align-self: stretch;
+  scroll-margin-top: 60px;
+}
+
+.HomeSection {
+  margin-top: calc(60px + var(--spacing-64));
 }
 
 .AboutSection {
