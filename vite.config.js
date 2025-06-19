@@ -2,6 +2,6 @@ import { defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 
 export default defineConfig({
-  base: '/portfolio-preact/',
+  base: '/Portfolio/',
   plugins: [preact()],
 })
