@@ -1,7 +1,8 @@
 :root {
   --black-color: #000;
   --dark-grey-color: #111;
-  --grey-color: #a5a5a5;
+  --medium-grey-color: #333;
+  --light-grey-color: #a5a5a5;
   --white-color: #fff;
   --accent-color: #bfff00;
 
@@ -127,7 +128,7 @@ body {
 }
 
 .FontGrey {
-  color: var(--grey-color);
+  color: var(--light-grey-color);
 }
 
 .FontAccent {
@@ -240,7 +241,7 @@ Button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: var(--border-width-1) solid var(--grey-color);
+  border: var(--border-width-1) solid var(--medium-grey-color);
   border-radius: var(--radius-16);
 }
 
