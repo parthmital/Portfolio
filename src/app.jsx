@@ -43,10 +43,10 @@ export function App() {
         </div>
         <div className="SocialIcons">
           <a href="https://linkedin.com/in/parthmital" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-            <img src="linkedin.svg" alt="LinkedIn" />
+            <img src="linkedin.svg" />
           </a>
           <a href="https://github.com/parthmital" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-            <img src="github.svg" alt="GitHub" />
+            <img src="github.svg" />
           </a>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=parth.mital.2004@gmail.com"
@@ -54,7 +54,7 @@ export function App() {
             rel="noopener noreferrer"
             aria-label="Gmail"
           >
-            <img src="gmail.svg" alt="Gmail" />
+            <img src="gmail.svg" />
           </a>
         </div>
       </div>
