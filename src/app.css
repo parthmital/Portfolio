@@ -39,6 +39,8 @@
   --skill-card-width: 125px;
   --social-icon-size: 60px;
   --skill-icon-size: 60px;
+
+  --scrollbar-size: 12px;
 }
 
 * {
@@ -63,7 +65,13 @@ body {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: var(--radius-8);
 }
 
 .FontRegular {
@@ -224,6 +232,7 @@ Button {
   gap: var(--spacing-24);
   align-self: stretch;
   overflow-x: scroll;
+  padding-bottom: var(--spacing-16);
 }
 
 .Project,
