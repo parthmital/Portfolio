@@ -1,25 +1,21 @@
-export function Project() {
+export function Project({ title, image, description, tags }) {
     return (
         <div className="Project">
-            <img src="Work.png" />
+            <img src={image} alt={title} />
             <div className="ProjectDetails">
-                <p className="Font20 FontSemiBold">E-Commerce Platform</p>
-                <p className="Font16 FontGrey">
-                    A full-stack e-commerce solution with React, Node.js, and Stripe
-                    integration.
-                </p>
+                <p className="Font20 FontSemiBold">{title}</p>
+                <p className="Font16 FontGrey">{description}</p>
                 <div className="ProjectTags">
-                    <div className="ProjectTag Font12 FontSemiBold FontBlack">
-                        React
-                    </div>
-                    <div className="ProjectTag Font12 FontSemiBold FontBlack">
-                        Node.js
-                    </div>
-                    <div className="ProjectTag Font12 FontSemiBold FontBlack">
-                        MongoDB
-                    </div>
+                    {tags.map((tag, i) => (
+                        <div
+                            key={i}
+                            className="ProjectTag Font12 FontSemiBold FontBlack"
+                        >
+                            {tag}
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
-    )
+    );
 }

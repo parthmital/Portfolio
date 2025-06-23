@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'preact/hooks'
 import { Project } from './components/project.jsx'
 import { Skill } from './components/skill.jsx'
 import skillsData from './data/skills.json'
+import projectsData from './data/projects.json'
 export function App() {
   const [activeSection, setActiveSection] = useState('home')
   const homeRef = useRef(null)
@@ -124,8 +125,14 @@ export function App() {
           </p>
         </div>
         <div className="Projects">
-          {[...Array(5)].map((_, i) => (
-            <Project key={i} />
+          {projectsData.map((project, i) => (
+            <Project
+              key={i}
+              title={project.title}
+              image={project.image}
+              description={project.description}
+              tags={project.tags}
+            />
           ))}
         </div>
       </div>

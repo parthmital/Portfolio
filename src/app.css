@@ -253,6 +253,7 @@ Button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: stretch;
   border: var(--border-width-1) solid var(--medium-grey-color);
   border-radius: var(--radius-16)
 }
@@ -273,7 +274,8 @@ Button {
 .Project img {
   width: 100%;
   height: var(--project-image-height);
-  object-fit: cover
+  object-fit: cover;
+  border-bottom: var(--border-width-1) solid var(--medium-grey-color);
 }
 
 .ProjectDetails {
@@ -308,7 +310,6 @@ Button {
   align-items: flex-start;
   align-content: flex-start;
   gap: var(--spacing-24);
-  align-self: stretch;
   flex-wrap: wrap
 }
 

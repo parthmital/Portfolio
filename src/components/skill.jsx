@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'preact/hooks'
 export function Skill({ name, icon, link }) {
     return (
         <a href={link} target="_blank" rel="noopener noreferrer" className="Skill">
