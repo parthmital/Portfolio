@@ -2,7 +2,7 @@ import './app.css'
 import { useEffect, useRef, useState } from 'preact/hooks'
 import { Project } from './components/project.jsx'
 import { Skill } from './components/skill.jsx'
-import skillsData from '../skills.json'
+import skillsData from './data/skills.json'
 export function App() {
   const [activeSection, setActiveSection] = useState('home')
   const homeRef = useRef(null)
@@ -140,7 +140,7 @@ export function App() {
         </div>
         <div className="Skills">
           {skillsData.map((skill, i) => (
-            <Skill key={i} name={skill.name} icon={skill.icon} />
+            <Skill key={i} name={skill.name} icon={skill.icon} link={skill.link} />
           ))}
         </div>
       </div>

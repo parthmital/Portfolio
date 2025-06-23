@@ -1,0 +1,212 @@
+[
+    {
+        "name": "React",
+        "icon": "react.svg",
+        "category": "Programming & Development",
+        "link": "https://react.dev/"
+    },
+    {
+        "name": "Next.js",
+        "icon": "nextjs.svg",
+        "category": "Programming & Development",
+        "link": "https://nextjs.org/"
+    },
+    {
+        "name": "HTML",
+        "icon": "html.svg",
+        "category": "Programming & Development",
+        "link": "https://www.w3schools.com/html/"
+    },
+    {
+        "name": "CSS",
+        "icon": "css.svg",
+        "category": "Programming & Development",
+        "link": "https://www.w3schools.com/css/"
+    },
+    {
+        "name": "JavaScript",
+        "icon": "javascript.svg",
+        "category": "Programming & Development",
+        "link": "https://www.w3schools.com/js/"
+    },
+    {
+        "name": "Python",
+        "icon": "python.svg",
+        "category": "Programming & Development",
+        "link": "https://www.python.org/"
+    },
+    {
+        "name": "Java",
+        "icon": "java.svg",
+        "category": "Programming & Development",
+        "link": "https://www.java.com/en/"
+    },
+    {
+        "name": "C",
+        "icon": "c.svg",
+        "category": "Programming & Development",
+        "link": "https://www.w3schools.com/c/"
+    },
+    {
+        "name": "C++",
+        "icon": "cpp.svg",
+        "category": "Programming & Development",
+        "link": "https://www.w3schools.com/cpp/"
+    },
+    {
+        "name": "Figma",
+        "icon": "figma.svg",
+        "category": "UI/UX & Design",
+        "link": "https://www.figma.com/"
+    },
+    {
+        "name": "Adobe Photoshop",
+        "icon": "photoshop.svg",
+        "category": "UI/UX & Design",
+        "link": "https://www.adobe.com/products/photoshop.html"
+    },
+    {
+        "name": "Adobe Illustrator",
+        "icon": "illustrator.svg",
+        "category": "UI/UX & Design",
+        "link": "https://www.adobe.com/products/illustrator.html"
+    },
+    {
+        "name": "Adobe Lightroom Classic",
+        "icon": "lightroom.svg",
+        "category": "UI/UX & Design",
+        "link": "https://www.adobe.com/products/photoshop-lightroom-classic.html"
+    },
+    {
+        "name": "Topaz Photo AI",
+        "icon": "topazphoto.svg",
+        "category": "UI/UX & Design",
+        "link": "https://www.topazlabs.com/topaz-photo-ai"
+    },
+    {
+        "name": "Blender",
+        "icon": "blender.svg",
+        "category": "3D Modelling & Texturing",
+        "link": "https://www.blender.org/"
+    },
+    {
+        "name": "Adobe Substance Painter",
+        "icon": "substance-painter.svg",
+        "category": "3D Modelling & Texturing",
+        "link": "https://www.adobe.com/products/substance3d/apps/painter.html"
+    },
+    {
+        "name": "Unreal Engine",
+        "icon": "unreal.svg",
+        "category": "3D Modelling & Texturing",
+        "link": "https://www.unrealengine.com/"
+    },
+    {
+        "name": "Marmoset Toolbag",
+        "icon": "marmoset.webp",
+        "category": "3D Modelling & Texturing",
+        "link": "https://marmoset.co/"
+    },
+    {
+        "name": "RizomUV",
+        "icon": "rizom.webp",
+        "category": "3D Modelling & Texturing",
+        "link": "https://www.rizomuv.com/"
+    },
+    {
+        "name": "Topogun",
+        "icon": "topogun.webp",
+        "category": "3D Modelling & Texturing",
+        "link": "https://www.topogun.com/"
+    },
+    {
+        "name": "Gaea",
+        "icon": "gaea.webp",
+        "category": "3D Modelling & Texturing",
+        "link": "https://quadspinner.com/"
+    },
+    {
+        "name": "Adobe Substance Sampler",
+        "icon": "substance-sampler.svg",
+        "category": "3D Modelling & Texturing",
+        "link": "https://www.adobe.com/products/substance3d/apps/sampler.html"
+    },
+    {
+        "name": "Adobe After Effects",
+        "icon": "aftereffects.svg",
+        "category": "Video Editing & Motion Graphics",
+        "link": "https://www.adobe.com/products/aftereffects.html"
+    },
+    {
+        "name": "Adobe Premiere Pro",
+        "icon": "premiere.svg",
+        "category": "Video Editing & Motion Graphics",
+        "link": "https://www.adobe.com/products/premiere.html"
+    },
+    {
+        "name": "DaVinci Resolve",
+        "icon": "davinci.svg",
+        "category": "Video Editing & Motion Graphics",
+        "link": "https://www.blackmagicdesign.com/products/davinciresolve/"
+    },
+    {
+        "name": "FFmpeg",
+        "icon": "ffmpeg.svg",
+        "category": "Video Editing & Motion Graphics",
+        "link": "https://ffmpeg.org/"
+    },
+    {
+        "name": "Topaz Video AI",
+        "icon": "topazvideoai.svg",
+        "category": "Video Editing & Motion Graphics",
+        "link": "https://www.topazlabs.com/video-ai"
+    },
+    {
+        "name": "Flow Frames",
+        "icon": "flowframes.png",
+        "category": "Video Editing & Motion Graphics",
+        "link": "https://nmkd.itch.io/flowframes"
+    },
+    {
+        "name": "Ableton Live Suite",
+        "icon": "ableton.svg",
+        "category": "Music Production & Audio",
+        "link": "https://www.ableton.com/"
+    },
+    {
+        "name": "FL Studio",
+        "icon": "flstudio.webp",
+        "category": "Music Production & Audio",
+        "link": "https://www.image-line.com/fl-studio/"
+    },
+    {
+        "name": "Adobe Audition",
+        "icon": "audition.svg",
+        "category": "Music Production & Audio",
+        "link": "https://www.adobe.com/products/audition.html"
+    },
+    {
+        "name": "iZotope RX",
+        "icon": "izotope-rx.svg",
+        "category": "Music Production & Audio",
+        "link": "https://www.izotope.com/en/products/rx.html"
+    },
+    {
+        "name": "iZotope Ozone",
+        "icon": "ozone.svg",
+        "category": "Music Production & Audio",
+        "link": "https://www.izotope.com/en/products/ozone.html"
+    },
+    {
+        "name": "Antares Auto-Tune",
+        "icon": "autotune.png",
+        "category": "Music Production & Audio",
+        "link": "https://www.antarestech.com/"
+    },
+    {
+        "name": "FabFilter Total Bundle",
+        "icon": "fabfilter.svg",
+        "category": "Music Production & Audio",
+        "link": "https://www.fabfilter.com/shop"
+    }
+]

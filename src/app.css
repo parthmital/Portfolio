@@ -229,11 +229,15 @@ Button {
   align-self: stretch
 }
 
+.ProjectTags,
 .Projects {
-  display: flex;
   align-items: center;
+  display: flex;
+  align-self: stretch
+}
+
+.Projects {
   gap: var(--spacing-24);
-  align-self: stretch;
   overflow-x: scroll;
   padding-bottom: var(--spacing-16)
 }
@@ -260,6 +264,8 @@ Button {
 }
 
 .Skill {
+  text-decoration: none;
+  color: inherit;
   gap: var(--spacing-12);
   width: var(--skill-card-width)
 }
@@ -278,10 +284,7 @@ Button {
 }
 
 .ProjectTags {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-8);
-  align-self: stretch
+  gap: var(--spacing-8)
 }
 
 .ProjectTag,
@@ -342,6 +345,7 @@ Button:hover {
 }
 
 .Project:active img,
+.Skill:active,
 .SocialIcons img:active,
 Button:active {
   transform: scale(1)
