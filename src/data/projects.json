@@ -1,18 +1,20 @@
 [
     {
         "title": "Portfolio Website",
-        "image": "PortfolioDesktop.png",
+        "image": "Portfolio.png",
         "description": "A clean, responsive personal portfolio built using Preact and Vite.",
         "tags": [
+            "Frontend",
             "Preact",
             "Vite"
         ]
     },
     {
         "title": "Spotify Homepage",
-        "image": "SpotifyMobile.jpg",
+        "image": "Spotify.jpg",
         "description": "A responsive redesign of Spotify’s homepage built with React and Vite.",
         "tags": [
+            "Frontend",
             "React",
             "Vite"
         ]
@@ -22,8 +24,8 @@
         "image": "Cricket.png",
         "description": "Predicts cricket player performance using machine learning with Random Forest models.",
         "tags": [
-            "Python",
-            "Machine Learning"
+            "Machine Learning",
+            "Python"
         ]
     }
 ]
