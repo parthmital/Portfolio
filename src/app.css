@@ -1,3 +1,8 @@
+*,
+body {
+  margin: 0
+}
+
 :root {
   --black-color: #000;
   --dark-grey-color: #111;
@@ -5,7 +10,6 @@
   --light-grey-color: #a5a5a5;
   --white-color: #fff;
   --accent-color: #bfff00;
-
   --font-size-12: 12px;
   --font-size-14: 14px;
   --font-size-16: 16px;
@@ -14,7 +18,6 @@
   --font-size-24: 24px;
   --font-size-36: 36px;
   --font-size-72: 72px;
-
   --spacing-4: 4px;
   --spacing-8: 8px;
   --spacing-12: 12px;
@@ -23,144 +26,135 @@
   --spacing-24: 24px;
   --spacing-32: 32px;
   --spacing-64: 64px;
-
   --radius-8: 8px;
   --radius-16: 16px;
   --radius-round: 100px;
-
   --border-width-1: 1px;
   --border-width-2: 2px;
-
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-
   --project-card-width: 275px;
   --project-image-height: 175px;
   --skill-card-width: 125px;
   --social-icon-size: 60px;
   --skill-icon-size: 60px;
-
-  --scrollbar-size: 12px;
+  --scrollbar-size: 12px
 }
 
 * {
-  margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-Button {
-  all: unset;
+  box-sizing: border-box
 }
 
 body {
-  margin: 0;
   font-family: Inter;
   color: var(--white-color);
   background-color: var(--black-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-64);
+  gap: var(--spacing-64)
 }
 
 ::-webkit-scrollbar {
   width: var(--scrollbar-size);
-  height: var(--scrollbar-size);
+  height: var(--scrollbar-size)
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--accent-color);
-  border-radius: var(--radius-8);
+  border-radius: var(--radius-8)
 }
 
 .FontRegular {
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-regular)
 }
 
 .FontSemiBold {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold)
 }
 
 .FontBold {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold)
 }
 
 .Font12 {
-  font-size: var(--font-size-12);
+  font-size: var(--font-size-12)
 }
 
 .Font14 {
-  font-size: var(--font-size-14);
+  font-size: var(--font-size-14)
 }
 
 .Font16 {
-  font-size: var(--font-size-16);
+  font-size: var(--font-size-16)
 }
 
 .Font18 {
-  font-size: var(--font-size-18);
+  font-size: var(--font-size-18)
 }
 
 .Font20 {
-  font-size: var(--font-size-20);
+  font-size: var(--font-size-20)
 }
 
 .Font24 {
-  font-size: var(--font-size-24);
+  font-size: var(--font-size-24)
 }
 
 .Font36 {
-  font-size: var(--font-size-36);
+  font-size: var(--font-size-36)
 }
 
 .Font72 {
-  font-size: var(--font-size-72);
+  font-size: var(--font-size-72)
 }
 
 .FontBlack {
-  color: var(--black-color);
+  color: var(--black-color)
 }
 
-.FontWhite {
-  color: var(--white-color);
+.FontWhite,
+.HeaderSection .FontGrey :hover {
+  color: var(--white-color)
 }
 
 .FontGrey {
-  color: var(--light-grey-color);
+  color: var(--light-grey-color)
 }
 
-.FontAccent {
-  color: var(--accent-color);
+.FontAccent,
+.HeaderSection .FontGrey :active {
+  color: var(--accent-color)
 }
 
 .FontCenter {
-  text-align: center;
+  text-align: center
 }
 
-.HeaderSection,
-.FooterSection {
+.FooterSection,
+.HeaderSection {
   display: flex;
   padding: var(--spacing-18) var(--spacing-64);
   align-items: center;
   align-self: stretch;
-  background: var(--dark-grey-color);
+  background: var(--dark-grey-color)
 }
 
 .HeaderSection {
   justify-content: space-between;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 1
 }
 
 .FooterSection {
-  justify-content: center;
+  justify-content: center
 }
 
-.HomeSection,
 .AboutSection,
+.HomeSection,
 .ProjectsSection,
 .SkillsSection {
   padding: 0 var(--spacing-64);
@@ -168,54 +162,62 @@ body {
   flex-direction: column;
   gap: var(--spacing-32);
   align-self: stretch;
-  scroll-margin-top: 60px;
+  scroll-margin-top: 60px
 }
 
 .HomeSection {
-  margin-top: calc(60px + var(--spacing-64));
+  margin-top: calc(60px + var(--spacing-64))
 }
 
 .AboutSection {
-  align-items: flex-start;
+  align-items: flex-start
 }
 
 .HeaderButtons {
   display: flex;
   gap: var(--spacing-24);
-  align-items: center;
+  align-items: center
+}
+
+.Buttons,
+Button {
+  display: flex;
+  justify-content: center
 }
 
 .Buttons {
-  display: flex;
-  justify-content: center;
   align-items: center;
   gap: var(--spacing-16);
-  white-space: nowrap;
+  white-space: nowrap
 }
 
 Button {
-  display: flex;
-  justify-content: center;
+  all: unset;
   align-items: center;
   padding: var(--spacing-12) var(--spacing-32);
-  border-radius: var(--radius-8);
+  border-radius: var(--radius-8)
+}
+
+.ProjectTag,
+.SocialIcons,
+.Tag {
+  justify-content: center;
+  display: flex
 }
 
 .Button1 {
-  background: var(--accent-color);
+  background: var(--accent-color)
 }
 
 .Button2 {
-  background: transparent;
+  background: 0 0;
   border: var(--border-width-2) solid var(--accent-color);
-  gap: var(--spacing-8);
+  gap: var(--spacing-8)
 }
 
 .SocialIcons {
-  display: flex;
-  justify-content: center;
   align-items: flex-start;
-  gap: var(--spacing-16);
+  gap: var(--spacing-16)
 }
 
 .ProjectsSectionHeader,
@@ -224,7 +226,7 @@ Button {
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-16);
-  align-self: stretch;
+  align-self: stretch
 }
 
 .Projects {
@@ -233,7 +235,13 @@ Button {
   gap: var(--spacing-24);
   align-self: stretch;
   overflow-x: scroll;
-  padding-bottom: var(--spacing-16);
+  padding-bottom: var(--spacing-16)
+}
+
+.ProjectDetails,
+.Skill {
+  padding: var(--spacing-24);
+  align-self: stretch
 }
 
 .Project,
@@ -242,59 +250,53 @@ Button {
   flex-direction: column;
   align-items: center;
   border: var(--border-width-1) solid var(--medium-grey-color);
-  border-radius: var(--radius-16);
+  border-radius: var(--radius-16)
 }
 
 .Project {
   width: var(--project-card-width);
   overflow: hidden;
-  flex-shrink: 0;
+  flex-shrink: 0
 }
 
 .Skill {
-  padding: var(--spacing-24);
   gap: var(--spacing-12);
-  width: var(--skill-card-width);
-  align-self: stretch;
+  width: var(--skill-card-width)
 }
 
 .Project img {
   width: 100%;
   height: var(--project-image-height);
-  object-fit: cover;
+  object-fit: cover
 }
 
 .ProjectDetails {
   display: flex;
-  padding: var(--spacing-24);
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--spacing-16);
-  align-self: stretch;
+  gap: var(--spacing-16)
 }
 
 .ProjectTags {
   display: flex;
   align-items: center;
   gap: var(--spacing-8);
-  align-self: stretch;
+  align-self: stretch
 }
 
-.Tag,
-.ProjectTag {
-  display: flex;
-  justify-content: center;
+.ProjectTag,
+.Tag {
   align-items: center;
   border-radius: var(--radius-round);
-  background: var(--accent-color);
+  background: var(--accent-color)
 }
 
 .Tag {
-  padding: var(--spacing-8) var(--spacing-16);
+  padding: var(--spacing-8) var(--spacing-16)
 }
 
 .ProjectTag {
-  padding: var(--spacing-4) var(--spacing-12);
+  padding: var(--spacing-4) var(--spacing-12)
 }
 
 .Skills {
@@ -304,85 +306,77 @@ Button {
   align-content: flex-start;
   gap: var(--spacing-24);
   align-self: stretch;
-  flex-wrap: wrap;
+  flex-wrap: wrap
 }
 
 .SocialIcons img {
   width: var(--social-icon-size);
-  height: var(--social-icon-size);
+  height: var(--social-icon-size)
 }
 
 .Skill img {
   width: var(--skill-icon-size);
-  height: var(--skill-icon-size);
+  height: var(--skill-icon-size)
 }
 
 .HeaderSection .FontGrey :hover,
-Button:hover,
-.SocialIcons img:hover,
 .Project:hover,
 .Project:hover img,
-.Skill:hover {
-  transition: all 0.25s;
-  cursor: pointer;
-}
-
-.HeaderSection .FontGrey :hover {
-  color: var(--white-color);
-}
-
-Button:hover,
+.Skill:hover,
 .SocialIcons img:hover,
+Button:hover {
+  transition: .25s;
+  cursor: pointer
+}
+
 .Project:hover img,
-.Skill:hover {
-  transform: scale(1.05);
+.Skill:hover,
+.SocialIcons img:hover,
+Button:hover {
+  transform: scale(1.05)
 }
 
 .Project:hover,
 .Skill:hover {
-  border-color: var(--accent-color);
+  border-color: var(--accent-color)
 }
 
-.HeaderSection .FontGrey :active {
-  color: var(--accent-color);
-}
-
-Button:active,
+.Project:active img,
 .SocialIcons img:active,
-.Project:active img {
-  transform: scale(1);
+Button:active {
+  transform: scale(1)
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   :root {
-    --social-icon-size: 48px;
+    --social-icon-size: 48px
   }
 
   .HeaderButtons {
-    display: none;
+    display: none
   }
 
-  .HeaderSection,
-  .FooterSection {
-    padding: var(--spacing-18) var(--spacing-32);
+  .FooterSection,
+  .HeaderSection {
+    padding: var(--spacing-18) var(--spacing-32)
   }
 
-  .HomeSection,
   .AboutSection,
+  .HomeSection,
   .ProjectsSection,
   .SkillsSection {
-    padding: 0 var(--spacing-32);
+    padding: 0 var(--spacing-32)
   }
 
   .Buttons {
-    flex-direction: column;
+    flex-direction: column
   }
 
   .AboutSection .Buttons {
-    align-items: flex-start;
+    align-items: flex-start
   }
 
   .HomeSection .Font72 {
-    font-size: var(--font-size-36);
+    font-size: var(--font-size-36)
   }
 }
