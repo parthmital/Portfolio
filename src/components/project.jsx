@@ -1,6 +1,6 @@
-export function Project({ title, image, description, tags }) {
+export function Project({ title, image, description, tags, link }) {
     return (
-        <div className="Project">
+        <a href={link} target="_blank" rel="noopener noreferrer" className="Project">
             <img src={image} alt={title} />
             <div className="ProjectDetails">
                 <p className="Font20 FontSemiBold">{title}</p>
@@ -16,6 +16,6 @@ export function Project({ title, image, description, tags }) {
                     ))}
                 </div>
             </div>
-        </div>
+        </a>
     );
 }

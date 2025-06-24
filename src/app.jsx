@@ -83,17 +83,17 @@ export function App() {
         </div>
         <div className="SocialIcons">
           <a href="https://linkedin.com/in/parthmital" target="_blank" rel="noopener noreferrer">
-            <img src="linkedin.svg" />
+            <img src="social/linkedin.svg" />
           </a>
           <a href="https://github.com/parthmital" target="_blank" rel="noopener noreferrer">
-            <img src="github.svg" />
+            <img src="social/github.svg" />
           </a>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=parth.mital.2004@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="gmail.svg" />
+            <img src="social/gmail.svg" />
           </a>
         </div>
       </div>
@@ -132,6 +132,7 @@ export function App() {
               image={project.image}
               description={project.description}
               tags={project.tags}
+              link={project.link}
             />
           ))}
         </div>

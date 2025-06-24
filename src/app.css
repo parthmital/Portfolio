@@ -259,6 +259,8 @@ Button {
 }
 
 .Project {
+  text-decoration: none;
+  color: inherit;
   width: var(--project-card-width);
   overflow: hidden;
   flex-shrink: 0

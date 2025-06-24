@@ -1,7 +1,8 @@
 [
     {
+        "link": "https://github.com/parthmital/Portfolio",
         "title": "Portfolio Website",
-        "image": "Portfolio.png",
+        "image": "project thumbnail/Portfolio.png",
         "description": "A clean, responsive personal portfolio built using Preact and Vite.",
         "tags": [
             "Frontend",
@@ -10,8 +11,9 @@
         ]
     },
     {
+        "link": "https://github.com/parthmital/Spotify",
         "title": "Spotify Homepage",
-        "image": "Spotify.jpg",
+        "image": "project thumbnail/Spotify.jpg",
         "description": "A responsive redesign of Spotify’s homepage built with React and Vite.",
         "tags": [
             "Frontend",
@@ -20,12 +22,23 @@
         ]
     },
     {
+        "link": "https://github.com/parthmital/IPL_Player_Performance_Predictor",
         "title": "Cricket Analytics",
-        "image": "Cricket.png",
+        "image": "project thumbnail/Cricket.png",
         "description": "Predicts cricket player performance using machine learning.",
         "tags": [
             "Machine Learning",
             "Python"
+        ]
+    },
+    {
+        "link": "projects/harry potter/Harry Potter.pdf",
+        "title": "Interior Recreation",
+        "image": "project thumbnail/Final Render (2023).jpg",
+        "description": "A recreation of an interior using Blender and Adobe Substance Painter",
+        "tags": [
+            "Archviz",
+            "Blender"
         ]
     }
 ]
