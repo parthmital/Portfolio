@@ -1,9 +1,9 @@
 import './app.css'
 import { useEffect, useRef, useState } from 'preact/hooks'
-import { Project } from './components/project.jsx'
-import { Skill } from './components/skill.jsx'
-import skillsData from './data/skills.json'
-import projectsData from './data/projects.json'
+import { Project } from './Components/Project.jsx'
+import { Skill } from './Components/Skill.jsx'
+import skillsData from './Data/SkillsData.json'
+import projectsData from './Data/ProjectsData.json'
 export function App() {
   const [activeSection, setActiveSection] = useState('home')
   const homeRef = useRef(null)
@@ -83,17 +83,17 @@ export function App() {
         </div>
         <div className="SocialIcons">
           <a href="https://linkedin.com/in/parthmital" target="_blank" rel="noopener noreferrer">
-            <img src="social/linkedin.svg" />
+            <img src="Social Icons/LinkedIn.svg" />
           </a>
           <a href="https://github.com/parthmital" target="_blank" rel="noopener noreferrer">
-            <img src="social/github.svg" />
+            <img src="Social Icons/GitHub.svg" />
           </a>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=parth.mital.2004@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="social/gmail.svg" />
+            <img src="Social Icons/Gmail.svg" />
           </a>
         </div>
       </div>
