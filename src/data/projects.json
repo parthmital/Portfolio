@@ -22,7 +22,7 @@
     {
         "title": "Cricket Analytics",
         "image": "Cricket.png",
-        "description": "Predicts cricket player performance using machine learning with Random Forest models.",
+        "description": "Predicts cricket player performance using machine learning.",
         "tags": [
             "Machine Learning",
             "Python"
