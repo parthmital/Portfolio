@@ -117,7 +117,7 @@ body {
 
 .FontWhite,
 .HeaderSection .FontGrey :hover {
-  color: var(--white-color)
+  color: var(--accent-color)
 }
 
 .FontGrey {
@@ -150,7 +150,16 @@ body {
 }
 
 .FooterSection {
-  justify-content: center
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  z-index: 1;
+  height: 60px;
+}
+
+.SkillsSection {
+  margin-bottom: var(--spacing-32);
 }
 
 .AboutSection,
