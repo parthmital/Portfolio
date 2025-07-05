@@ -77,7 +77,7 @@ export function App() {
           >
             View My Work
           </button>
-          <button className="Button2 Font14 FontSemiBold FontAccent">
+          <button className="Button2 Font14 FontSemiBold FontAccent" onClick={() => window.open('Resume/Parth_Mital_Resume.pdf', '_blank')}>
             Download CV
           </button>
         </div>
@@ -137,7 +137,7 @@ export function App() {
           ))}
         </div>
       </div>
-      <div id="skills" ref={skillsRef} className="SkillsSection">
+      <div id="skills" ref={skillsRef} className="SkillsSection" style={{ paddingBottom: "calc(60px + var(--spacing-32))" }}>
         <div className="SkillsSectionHeader">
           <p className="Font36 FontBold FontCenter">
             Technical <span className="FontAccent">Skills</span>
