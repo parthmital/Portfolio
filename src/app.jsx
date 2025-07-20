@@ -4,12 +4,16 @@ import { Project } from './Components/Project.jsx'
 import { Skill } from './Components/Skill.jsx'
 import skillsData from './Data/SkillsData.json'
 import projectsData from './Data/ProjectsData.json'
+
 export function App() {
   const [activeSection, setActiveSection] = useState('home')
+  const [skillFilter, setSkillFilter] = useState('All')
   const homeRef = useRef(null)
   const aboutRef = useRef(null)
   const projectsRef = useRef(null)
   const skillsRef = useRef(null)
+  const skillCategories = ['All', ...Array.from(new Set(skillsData.map(skill => skill.category)))]
+  const filteredSkills = skillFilter === 'All' ? skillsData : skillsData.filter(skill => skill.category === skillFilter)
   const scrollToSection = (ref, name) => {
     setActiveSection(name)
     setTimeout(() => {
@@ -107,13 +111,6 @@ export function App() {
         <p className="Font18 FontGrey">
           I also work in 3D modelling and texturing with Blender and Substance Painter, edit videos using After Effects and Premiere Pro, and produce music with Ableton Live and FL Studio.
         </p>
-        <div className="Buttons">
-          {['Development', '3D Animation', 'Video Editing', 'Music Production'].map(tag => (
-            <div key={tag} className="Tag Font14 FontSemiBold FontBlack">
-              {tag}
-            </div>
-          ))}
-        </div>
       </div>
       <div id="projects" ref={projectsRef} className="ProjectsSection">
         <div className="ProjectsSectionHeader">
@@ -145,9 +142,20 @@ export function App() {
           <p className="Font18 FontGrey FontCenter">
             The Tools I Use for Coding, Designing, Editing, and Creating Across Different Media
           </p>
+          <div className="Buttons" style={{ flexWrap: 'wrap' }}>
+            {skillCategories.map(category => (
+              <button
+                key={category}
+                className={`Font14 FontSemiBold ${skillFilter === category ? 'Button1 FontBlack' : 'Button2 FontAccent'}`}
+                onClick={() => setSkillFilter(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="Skills">
-          {skillsData.map((skill, i) => (
+          {filteredSkills.map((skill, i) => (
             <Skill key={i} name={skill.name} icon={skill.icon} link={skill.link} />
           ))}
         </div>
