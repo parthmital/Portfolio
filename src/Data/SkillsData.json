@@ -24,10 +24,22 @@
         "link": "https://www.w3schools.com/css/"
     },
     {
+        "name": "Tailwind CSS",
+        "icon": "Softwares/Tailwind.svg",
+        "category": "Programming & Development",
+        "link": "https://tailwindcss.com/"
+    },
+    {
         "name": "JavaScript",
         "icon": "Softwares/JavaScript.svg",
         "category": "Programming & Development",
         "link": "https://www.w3schools.com/js/"
+    },
+    {
+        "name": "TypeScript",
+        "icon": "Softwares/TypeScript.svg",
+        "category": "Programming & Development",
+        "link": "https://www.typescriptlang.org/"
     },
     {
         "name": "Python",
