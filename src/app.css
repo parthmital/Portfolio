@@ -1,6 +1,6 @@
 *,
 body {
-  margin: 0
+  margin: 0;
 }
 
 :root {
@@ -39,16 +39,16 @@ body {
   --skill-card-width: 125px;
   --social-icon-size: 60px;
   --skill-icon-size: 60px;
-  --scrollbar-size: 12px
+  --scrollbar-size: 12px;
 }
 
 * {
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--white-color);
   background-color: var(--black-color);
   display: flex;
@@ -60,78 +60,78 @@ body {
 
 ::-webkit-scrollbar {
   width: var(--scrollbar-size);
-  height: var(--scrollbar-size)
+  height: var(--scrollbar-size);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--accent-color);
-  border-radius: var(--radius-8)
+  border-radius: var(--radius-8);
 }
 
 .FontRegular {
-  font-weight: var(--font-weight-regular)
+  font-weight: var(--font-weight-regular);
 }
 
 .FontSemiBold {
-  font-weight: var(--font-weight-semibold)
+  font-weight: var(--font-weight-semibold);
 }
 
 .FontBold {
-  font-weight: var(--font-weight-bold)
+  font-weight: var(--font-weight-bold);
 }
 
 .Font12 {
-  font-size: var(--font-size-12)
+  font-size: var(--font-size-12);
 }
 
 .Font14 {
-  font-size: var(--font-size-14)
+  font-size: var(--font-size-14);
 }
 
 .Font16 {
-  font-size: var(--font-size-16)
+  font-size: var(--font-size-16);
 }
 
 .Font18 {
-  font-size: var(--font-size-18)
+  font-size: var(--font-size-18);
 }
 
 .Font20 {
-  font-size: var(--font-size-20)
+  font-size: var(--font-size-20);
 }
 
 .Font24 {
-  font-size: var(--font-size-24)
+  font-size: var(--font-size-24);
 }
 
 .Font36 {
-  font-size: var(--font-size-36)
+  font-size: var(--font-size-36);
 }
 
 .Font72 {
-  font-size: var(--font-size-72)
+  font-size: var(--font-size-72);
 }
 
 .FontBlack {
-  color: var(--black-color)
+  color: var(--black-color);
 }
 
 .FontWhite,
 .HeaderSection .FontGrey :hover {
-  color: var(--accent-color)
+  color: var(--accent-color);
 }
 
 .FontGrey {
-  color: var(--light-grey-color)
+  color: var(--light-grey-color);
 }
 
 .FontAccent,
 .HeaderSection .FontGrey :active {
-  color: var(--accent-color)
+  color: var(--accent-color);
 }
 
 .FontCenter {
-  text-align: center
+  text-align: center;
 }
 
 .FooterSection,
@@ -140,14 +140,14 @@ body {
   padding: var(--spacing-18) var(--spacing-64);
   align-items: center;
   align-self: stretch;
-  background: var(--dark-grey-color)
+  background: var(--dark-grey-color);
 }
 
 .HeaderSection {
   justify-content: space-between;
   position: fixed;
   width: 100%;
-  z-index: 1
+  z-index: 1;
 }
 
 .FooterSection {
@@ -168,62 +168,62 @@ body {
   flex-direction: column;
   gap: var(--spacing-32);
   align-self: stretch;
-  scroll-margin-top: 60px
+  scroll-margin-top: 60px;
 }
 
 .HomeSection {
-  margin-top: calc(60px + var(--spacing-64))
+  margin-top: calc(60px + var(--spacing-64));
 }
 
 .AboutSection {
-  align-items: flex-start
+  align-items: flex-start;
 }
 
 .HeaderButtons {
   display: flex;
   gap: var(--spacing-24);
-  align-items: center
+  align-items: center;
 }
 
 .Buttons,
 Button {
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 
 .Buttons {
   align-items: center;
   gap: var(--spacing-16);
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 Button {
   all: unset;
   align-items: center;
   padding: var(--spacing-12) var(--spacing-32);
-  border-radius: var(--radius-8)
+  border-radius: var(--radius-8);
 }
 
 .ProjectTag,
 .SocialIcons,
 .Tag {
   justify-content: center;
-  display: flex
+  display: flex;
 }
 
 .Button1 {
-  background: var(--accent-color)
+  background: var(--accent-color);
 }
 
 .Button2 {
   background: 0 0;
   border: var(--border-width-2) solid var(--accent-color);
-  gap: var(--spacing-8)
+  gap: var(--spacing-8);
 }
 
 .SocialIcons {
   align-items: flex-start;
-  gap: var(--spacing-16)
+  gap: var(--spacing-16);
 }
 
 .ProjectsSectionHeader,
@@ -232,26 +232,26 @@ Button {
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-16);
-  align-self: stretch
+  align-self: stretch;
 }
 
 .ProjectTags,
 .Projects {
   align-items: center;
   display: flex;
-  align-self: stretch
+  align-self: stretch;
 }
 
 .Projects {
   gap: var(--spacing-24);
   overflow-x: scroll;
-  padding-bottom: var(--spacing-16)
+  padding-bottom: var(--spacing-16);
 }
 
 .ProjectDetails,
 .Skill {
   padding: var(--spacing-24);
-  align-self: stretch
+  align-self: stretch;
 }
 
 .Project,
@@ -261,7 +261,7 @@ Button {
   align-items: center;
   align-self: stretch;
   border: var(--border-width-1) solid var(--medium-grey-color);
-  border-radius: var(--radius-16)
+  border-radius: var(--radius-16);
 }
 
 .Project {
@@ -269,14 +269,14 @@ Button {
   color: inherit;
   width: var(--project-card-width);
   overflow: hidden;
-  flex-shrink: 0
+  flex-shrink: 0;
 }
 
 .Skill {
   text-decoration: none;
   color: inherit;
   gap: var(--spacing-12);
-  width: var(--skill-card-width)
+  width: var(--skill-card-width);
 }
 
 .Project img {
@@ -290,26 +290,26 @@ Button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--spacing-16)
+  gap: var(--spacing-16);
 }
 
 .ProjectTags {
-  gap: var(--spacing-8)
+  gap: var(--spacing-8);
 }
 
 .ProjectTag,
 .Tag {
   align-items: center;
   border-radius: var(--radius-round);
-  background: var(--accent-color)
+  background: var(--accent-color);
 }
 
 .Tag {
-  padding: var(--spacing-8) var(--spacing-16)
+  padding: var(--spacing-8) var(--spacing-16);
 }
 
 .ProjectTag {
-  padding: var(--spacing-4) var(--spacing-12)
+  padding: var(--spacing-4) var(--spacing-12);
 }
 
 .Skills {
@@ -318,17 +318,17 @@ Button {
   align-items: flex-start;
   align-content: flex-start;
   gap: var(--spacing-24);
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 
 .SocialIcons img {
   width: var(--social-icon-size);
-  height: var(--social-icon-size)
+  height: var(--social-icon-size);
 }
 
 .Skill img {
   width: var(--skill-icon-size);
-  height: var(--skill-icon-size)
+  height: var(--skill-icon-size);
 }
 
 .HeaderSection .FontGrey :hover,
@@ -337,59 +337,59 @@ Button {
 .Skill:hover,
 .SocialIcons img:hover,
 Button:hover {
-  transition: .25s;
-  cursor: pointer
+  transition: 0.25s;
+  cursor: pointer;
 }
 
 .Project:hover img,
 .Skill:hover,
 .SocialIcons img:hover,
 Button:hover {
-  transform: scale(1.05)
+  transform: scale(1.05);
 }
 
 .Project:hover,
 .Skill:hover {
-  border-color: var(--accent-color)
+  border-color: var(--accent-color);
 }
 
 .Project:active img,
 .Skill:active,
 .SocialIcons img:active,
 Button:active {
-  transform: scale(1)
+  transform: scale(1);
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   :root {
-    --social-icon-size: 48px
+    --social-icon-size: 48px;
   }
 
   .HeaderButtons {
-    display: none
+    display: none;
   }
 
   .FooterSection,
   .HeaderSection {
-    padding: var(--spacing-18) var(--spacing-32)
+    padding: var(--spacing-18) var(--spacing-32);
   }
 
   .AboutSection,
   .HomeSection,
   .ProjectsSection,
   .SkillsSection {
-    padding: 0 var(--spacing-32)
+    padding: 0 var(--spacing-32);
   }
 
   .Buttons {
-    flex-direction: column
+    flex-direction: column;
   }
 
   .AboutSection .Buttons {
-    align-items: flex-start
+    align-items: flex-start;
   }
 
   .HomeSection .Font72 {
-    font-size: var(--font-size-36)
+    font-size: var(--font-size-36);
   }
 }
