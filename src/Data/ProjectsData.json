@@ -1,44 +1,30 @@
 [
-    {
-        "link": "https://github.com/parthmital/Portfolio",
-        "title": "Portfolio Website",
-        "image": "Project Thumbnails/Portfolio.png",
-        "description": "A clean, responsive personal portfolio built using Preact and Vite.",
-        "tags": [
-            "Frontend",
-            "Preact",
-            "Vite"
-        ]
-    },
-    {
-        "link": "https://github.com/parthmital/Spotify",
-        "title": "Spotify Homepage",
-        "image": "Project Thumbnails/Spotify.jpg",
-        "description": "A responsive redesign of Spotify’s homepage built with React and Vite.",
-        "tags": [
-            "Frontend",
-            "React",
-            "Vite"
-        ]
-    },
-    {
-        "link": "https://github.com/parthmital/IPL_Player_Performance_Predictor",
-        "title": "Cricket Analytics",
-        "image": "Project Thumbnails/Cricket.png",
-        "description": "Predicts cricket player performance using machine learning.",
-        "tags": [
-            "Machine Learning",
-            "Python"
-        ]
-    },
-    {
-        "link": "Projects/Project Hermione's Bedroom - A Journey Through Time.pdf",
-        "title": "Interior Recreation",
-        "image": "Project Thumbnails/Harry Potter.jpg",
-        "description": "A recreation of an interior using Blender and Adobe Substance Painter",
-        "tags": [
-            "Archviz",
-            "Blender"
-        ]
-    }
+	{
+		"link": "https://github.com/parthmital/Portfolio",
+		"title": "Portfolio Website",
+		"image": "Project Thumbnails/Portfolio.png",
+		"description": "A clean, responsive personal portfolio built using Preact and Vite.",
+		"tags": ["Frontend", "Preact", "Vite"]
+	},
+	{
+		"link": "https://github.com/parthmital/Spotify",
+		"title": "Spotify Homepage",
+		"image": "Project Thumbnails/Spotify.jpg",
+		"description": "A responsive redesign of Spotify’s homepage built with React and Vite.",
+		"tags": ["Frontend", "React", "Vite"]
+	},
+	{
+		"link": "https://github.com/parthmital/IPL_Player_Performance_Predictor",
+		"title": "Cricket Analytics",
+		"image": "Project Thumbnails/Cricket.png",
+		"description": "Predicts cricket player performance using machine learning.",
+		"tags": ["Machine Learning", "Python"]
+	},
+	{
+		"link": "Projects/Project Hermione's Bedroom - A Journey Through Time.pdf",
+		"title": "Interior Recreation",
+		"image": "Project Thumbnails/Harry Potter.jpg",
+		"description": "A recreation of an interior using Blender and Adobe Substance Painter",
+		"tags": ["Archviz", "Blender"]
+	}
 ]
