@@ -1,16 +1,13 @@
 import "./app.css";
 import { useEffect, useRef, useState } from "preact/hooks";
-import { Project } from "./Components/Project.jsx";
 import { Skill } from "./Components/Skill.jsx";
 import skillsData from "./Data/SkillsData.json";
-import projectsData from "./Data/ProjectsData.json";
 
 export function App() {
 	const [activeSection, setActiveSection] = useState("home");
 	const [skillFilter, setSkillFilter] = useState("All");
 	const homeRef = useRef(null);
 	const aboutRef = useRef(null);
-	const projectsRef = useRef(null);
 	const skillsRef = useRef(null);
 	const skillCategories = [
 		"All",
@@ -30,7 +27,6 @@ export function App() {
 		const sectionRefs = [
 			{ id: "home", ref: homeRef },
 			{ id: "about", ref: aboutRef },
-			{ id: "projects", ref: projectsRef },
 			{ id: "skills", ref: skillsRef },
 		];
 		const handleScroll = () => {
@@ -62,7 +58,6 @@ export function App() {
 					{[
 						{ id: "home", label: "Home", ref: homeRef },
 						{ id: "about", label: "About", ref: aboutRef },
-						{ id: "projects", label: "Projects", ref: projectsRef },
 						{ id: "skills", label: "Skills", ref: skillsRef },
 					].map(({ id, label, ref }) => (
 						<p
@@ -84,12 +79,6 @@ export function App() {
 					Animation, Video Editing, and Music Production.
 				</p>
 				<div className="Buttons">
-					<button
-						onClick={() => scrollToSection(projectsRef, "projects")}
-						className="Button1 Font14 FontSemiBold FontBlack"
-					>
-						View My Work
-					</button>
 					<button
 						className="Button2 Font14 FontSemiBold FontAccent"
 						onClick={() =>
@@ -140,29 +129,6 @@ export function App() {
 					music with Ableton Live and FL Studio.
 				</p>
 			</div>
-			<div id="projects" ref={projectsRef} className="ProjectsSection">
-				<div className="ProjectsSectionHeader">
-					<p className="Font36 FontBold FontCenter">
-						Featured <span className="FontAccent">Projects</span>
-					</p>
-					<p className="Font18 FontGrey FontCenter">
-						Explore a Curated Collection of My Work in Frontend Development,
-						UI/UX Design, 3D Animation, Video Editing, and Music Production.
-					</p>
-				</div>
-				<div className="Projects">
-					{projectsData.map((project, i) => (
-						<Project
-							key={i}
-							title={project.title}
-							image={project.image}
-							description={project.description}
-							tags={project.tags}
-							link={project.link}
-						/>
-					))}
-				</div>
-			</div>
 			<div
 				id="skills"
 				ref={skillsRef}
@@ -181,11 +147,10 @@ export function App() {
 						{skillCategories.map((category) => (
 							<button
 								key={category}
-								className={`Font14 FontSemiBold ${
-									skillFilter === category
-										? "Button1 FontBlack"
-										: "Button2 FontAccent"
-								}`}
+								className={`Font14 FontSemiBold ${skillFilter === category
+									? "Button1 FontBlack"
+									: "Button2 FontAccent"
+									}`}
 								onClick={() => setSkillFilter(category)}
 							>
 								{category}
