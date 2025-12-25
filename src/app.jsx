@@ -147,10 +147,11 @@ export function App() {
 						{skillCategories.map((category) => (
 							<button
 								key={category}
-								className={`Font14 FontSemiBold ${skillFilter === category
-									? "Button1 FontBlack"
-									: "Button2 FontAccent"
-									}`}
+								className={`Font14 FontSemiBold ${
+									skillFilter === category
+										? "Button1 FontBlack"
+										: "Button2 FontAccent"
+								}`}
 								onClick={() => setSkillFilter(category)}
 							>
 								{category}
