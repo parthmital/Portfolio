@@ -1,7 +1,7 @@
 # Portfolio Website — Parth Mital
 
 This is a personal portfolio website for **Parth Mital**, a Computer Science student showcasing skills across multiple creative and technical domains.  
-The app is built as a modern, responsive single-page application using Preact and Vite. [web:9]
+The app is built as a modern, responsive single-page application using Preact and Vite.
 
 ## Technical Architecture
 
@@ -98,11 +98,11 @@ The app is built as a modern, responsive single-page application using Preact an
 
 ## Deployment & Hosting
 
-- Deployed on Vercel using its standard deployment workflow (Preview + Production environments). [web:16][web:19]
+- Deployed on Vercel using its standard deployment workflow (Preview + Production environments).
 
 ## Accessibility & UX
 
-- Semantic HTML structure with proper heading hierarchy. [web:13]
+- Semantic HTML structure with proper heading hierarchy.
 - Keyboard-friendly navigation and interactions.
 - Fully responsive layout across device sizes.
 - Clear visual feedback via hover/focus states.
