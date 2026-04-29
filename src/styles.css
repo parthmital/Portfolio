@@ -1,0 +1,257 @@
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Notebook design system.
+ * Colors in oklch. Custom tokens registered in @theme inline so Tailwind
+ * utilities (bg-paper, text-graphite, font-arch, etc.) work everywhere.
+ */
+
+@theme inline {
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--radius-2xl: calc(var(--radius) + 8px);
+
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+
+	--color-paper: var(--paper);
+	--color-paper-2: var(--paper-2);
+	--color-paper-edge: var(--paper-edge);
+	--color-graphite: var(--graphite);
+	--color-graphite-soft: var(--graphite-soft);
+	--color-graphite-muted: var(--graphite-muted);
+	--color-ink-blue: var(--ink-blue);
+	--color-ink-red: var(--ink-red);
+	--color-rule-line: var(--rule-line);
+
+	--font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+	--font-hand: "Caveat", cursive;
+	--font-scrawl: "Kalam", cursive;
+	--font-arch: "Architects Daughter", cursive;
+}
+
+:root {
+	--radius: 0.5rem;
+
+	/* Notebook palette - grayscale high contrast */
+	--paper: oklch(0 0 0);
+	--paper-2: oklch(0.15 0 0);
+	--paper-edge: oklch(0.35 0 0);
+	--graphite: oklch(0.95 0 0);
+	--graphite-soft: oklch(0.75 0 0);
+	--graphite-muted: oklch(0.55 0 0);
+	--ink-blue: oklch(0.75 0 0);
+	--ink-red: oklch(0.85 0 0);
+	--rule-line: oklch(0.25 0 0);
+
+	/* Shadcn semantic tokens */
+	--background: var(--paper);
+	--foreground: var(--graphite);
+	--card: oklch(0.15 0 0);
+	--card-foreground: var(--graphite);
+	--popover: oklch(0.15 0 0);
+	--popover-foreground: var(--graphite);
+	--primary: var(--graphite);
+	--primary-foreground: var(--paper);
+	--secondary: oklch(0.22 0 0);
+	--secondary-foreground: var(--graphite);
+	--muted: oklch(0.22 0 0);
+	--muted-foreground: var(--graphite-soft);
+	--accent: oklch(0.85 0 0);
+	--accent-foreground: var(--paper);
+	--destructive: var(--ink-red);
+	--destructive-foreground: var(--paper);
+	--border: oklch(0.35 0 0);
+	--input: oklch(0.3 0 0);
+	--ring: var(--graphite-soft);
+}
+
+@layer base {
+	* {
+		border-color: var(--color-border);
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: var(--font-sans);
+		background-color: var(--color-paper);
+		color: var(--color-graphite);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	/* Subtle paper grain for dark mode */
+	body::before {
+		content: "";
+		position: fixed;
+		inset: 0;
+		pointer-events: none;
+		z-index: 0;
+		opacity: 0.08;
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.87 0 0 0 0 0.9 0 0 0 0.15 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+		mix-blend-mode: soft-light;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: var(--font-arch);
+		letter-spacing: 0.005em;
+	}
+}
+
+/* ===== Notebook primitives (used via @apply or class) ===== */
+
+@utility font-hand {
+	font-family: var(--font-hand);
+}
+@utility font-scrawl {
+	font-family: var(--font-scrawl);
+}
+@utility font-arch {
+	font-family: var(--font-arch);
+}
+
+/* Paper sheet: a clean ruled card. Subtle, consistent. */
+.paper-sheet {
+	position: relative;
+	background-color: var(--color-paper);
+	background-image: repeating-linear-gradient(
+		0deg,
+		transparent 0,
+		transparent 31px,
+		var(--rule-line) 31px,
+		var(--rule-line) 32px
+	);
+	border: 1px solid var(--color-paper-edge);
+	border-radius: 6px;
+	box-shadow:
+		0 1px 0 oklch(0.4 0 0 / 0.15),
+		0 12px 30px -18px oklch(0.15 0 0 / 0.5),
+		inset 0 0 60px oklch(0.25 0 0 / 0.15);
+}
+.paper-sheet--alt {
+	background-color: var(--color-paper-2);
+}
+
+/* Notebook margin line: hidden on mobile, visible on sm+ */
+.paper-sheet[data-margin="true"]::before {
+	content: "";
+	position: absolute;
+	left: 28px;
+	top: 12px;
+	bottom: 12px;
+	width: 1.5px;
+	background: oklch(0.55 0 0 / 0.6);
+	pointer-events: none;
+	display: none;
+}
+
+@media (min-width: 640px) {
+	.paper-sheet[data-margin="true"]::before {
+		display: block;
+	}
+}
+
+@media (min-width: 768px) {
+	.paper-sheet[data-margin="true"]::before {
+		left: 56px;
+	}
+}
+
+/* Pencil underline: pure CSS wavy underline using a repeating gradient */
+.pencil-underline {
+	position: relative;
+	padding-bottom: 6px;
+}
+.pencil-underline::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 2px;
+	background: var(--color-graphite);
+	border-radius: 2px;
+	opacity: 0.85;
+	transform: skewY(-0.6deg);
+}
+
+/* Annotation chip: small handwritten margin notes */
+.annotation {
+	font-family: var(--font-hand);
+	color: var(--color-graphite-soft);
+	font-size: 1.05rem;
+	line-height: 1.2;
+}
+
+/* Notecard: a small framed area for project headers, dashed pencil border */
+.notecard {
+	position: relative;
+	background: oklch(0.22 0 0);
+	border: 1px dashed oklch(0.5 0 0 / 0.6);
+	border-radius: 6px;
+	padding: 1rem 1.25rem;
+}
+
+/* Hand-drawn link / button hover: stroke darkens slightly */
+.retrace {
+	transition:
+		filter 180ms ease,
+		color 180ms ease;
+}
+.retrace:hover {
+	filter: contrast(1.15) brightness(0.92);
+}
+
+/* Stat callout */
+.stat-num {
+	font-family: var(--font-arch);
+	font-size: 2rem;
+	line-height: 1;
+	color: var(--color-graphite);
+}
+
+/* Tag pill */
+.tag {
+	display: inline-flex;
+	align-items: center;
+	font-family: var(--font-scrawl);
+	font-size: 0.875rem;
+	color: var(--color-graphite);
+	background: oklch(0.3 0 0);
+	border: 1px solid var(--color-paper-edge);
+	border-radius: 999px;
+	padding: 0.15rem 0.65rem;
+}
+
+/* Safe area padding for mobile devices with notches/home indicators */
+.safe-area-pb {
+	padding-bottom: env(safe-area-inset-bottom, 0px);
+}
