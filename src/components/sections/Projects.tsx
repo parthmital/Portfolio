@@ -12,13 +12,17 @@ export function Projects() {
 		[],
 	);
 
-	const filteredProjects = useMemo(
-		() =>
-			selectedField
-				? projects.filter((p) => p.fields.includes(selectedField))
-				: projects,
-		[selectedField],
-	);
+	const filteredProjects = useMemo(() => {
+		if (!selectedField) return projects;
+
+		return projects
+			.filter((p) => p.fields.includes(selectedField))
+			.sort((a, b) => {
+				const rankA = a.fields.indexOf(selectedField);
+				const rankB = b.fields.indexOf(selectedField);
+				return rankA - rankB;
+			});
+	}, [selectedField]);
 
 	return (
 		<PaperSheet id="projects">

@@ -8,7 +8,7 @@ export function ProjectCard({ project, index }: Props) {
 	const [expanded, setExpanded] = useState(false);
 
 	return (
-		<div className="notecard group flex h-full flex-col">
+		<div className="notecard flex h-full flex-col">
 			<div className="flex items-baseline gap-3">
 				<span className="font-hand text-graphite-muted text-base">
 					#{number}
@@ -17,9 +17,26 @@ export function ProjectCard({ project, index }: Props) {
 					href={project.github}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="font-arch text-graphite cursor-pointer text-2xl group-hover:underline"
+					className="font-arch text-graphite group inline-flex items-center gap-1.5 text-2xl"
 				>
-					{project.title}
+					<span className="cursor-pointer group-hover:underline">
+						{project.title}
+					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						className="text-graphite-muted group-hover:text-graphite cursor-pointer"
+					>
+						<path d="M7 17L17 7" />
+						<path d="M7 7h10v10" />
+					</svg>
 				</a>
 			</div>
 
