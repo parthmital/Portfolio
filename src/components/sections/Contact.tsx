@@ -1,6 +1,7 @@
 import { profile } from "@/data";
 import { PaperSheet } from "@/components/notebook/PaperSheet";
 import { SectionHeading } from "@/components/notebook/SectionHeading";
+import { ContactCard } from "@/components/notebook/ContactCard";
 
 export function Contact() {
 	const links = [
@@ -19,21 +20,12 @@ export function Contact() {
 
 			<div className="flex flex-col gap-4 sm:flex-row">
 				{links.map((l) => (
-					<a
+					<ContactCard
 						key={l.label}
+						label={l.label}
+						value={l.value}
 						href={l.href}
-						className="group border-paper-edge bg-paper/60 retrace hover:border-graphite/60 block flex-auto rounded-md border p-4 transition-colors"
-					>
-						<div className="text-graphite-muted text-xs tracking-wide uppercase">
-							{l.label}
-						</div>
-						<div className="font-arch text-graphite mt-1 text-lg">
-							{l.value}{" "}
-							<span className="text-graphite-muted group-hover:text-graphite transition-colors">
-								→
-							</span>
-						</div>
-					</a>
+					/>
 				))}
 			</div>
 		</PaperSheet>

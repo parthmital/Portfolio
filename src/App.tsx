@@ -11,7 +11,7 @@ export default function App() {
 	return (
 		<div className="text-graphite relative min-h-screen">
 			<Nav />
-			<main className="relative z-10 mx-auto max-w-5xl space-y-6 px-4 py-6 pb-20 sm:px-8 md:space-y-14 md:py-12 md:pb-12">
+			<main className="relative z-10 mx-auto max-w-5xl space-y-6 px-4 py-6 pb-24 sm:px-8 md:space-y-14 md:py-12 md:pb-12">
 				<Hero />
 				<About />
 				<Projects />

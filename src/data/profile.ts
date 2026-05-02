@@ -9,6 +9,10 @@ export const profile: Profile = {
 	github: "https://github.com/parthmital",
 	linkedin: "https://linkedin.com/in/parthmital",
 	resumeUrl: "/Resume/Parth_Mital_Resume.pdf",
+	resumes: {
+		ai: "/Parth_Mital_AI.pdf",
+		swe: "/Parth_Mital_SWE.pdf",
+	},
 };
 
 export const about: About = {
@@ -41,23 +45,7 @@ export const education: Education = [
 	},
 ];
 
-export const skillGroups: SkillGroup[] = [
-	{
-		label: "Programming & Development",
-		items: [
-			"React",
-			"Next.js",
-			"HTML",
-			"CSS",
-			"Tailwind CSS",
-			"JavaScript",
-			"TypeScript",
-			"Python",
-			"Java",
-			"C",
-			"C++",
-		],
-	},
+export const creativeSkillGroups: SkillGroup[] = [
 	{
 		label: "UI/UX & Design",
 		items: [
@@ -103,21 +91,5 @@ export const skillGroups: SkillGroup[] = [
 			"Antares Auto-Tune",
 			"FabFilter Total Bundle",
 		],
-	},
-	{
-		label: "ML / CV",
-		items: ["PyTorch", "TensorFlow", "OpenCV", "scikit-learn", "Hugging Face"],
-	},
-	{
-		label: "Agentic / LLM",
-		items: ["LangGraph", "LangChain", "RAG", "Vector DBs"],
-	},
-	{
-		label: "Backend",
-		items: ["FastAPI", "Node.js", "Postgres", "Supabase", "Redis"],
-	},
-	{
-		label: "Infra",
-		items: ["Docker", "Linux", "GitHub Actions", "Cloudflare", "vtk.js"],
 	},
 ];

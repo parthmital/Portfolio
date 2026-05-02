@@ -32,7 +32,7 @@ export function Nav() {
 				<a href="#top" className="font-arch text-graphite retrace text-xl">
 					{profile.name.split(" ")[0]}.
 				</a>
-				<div className="text-graphite-soft hidden items-center gap-7 text-sm md:flex">
+				<div className="text-graphite-soft hidden items-center gap-6 text-sm md:flex">
 					{links.map((l) => (
 						<a
 							key={l.href}
@@ -43,9 +43,15 @@ export function Nav() {
 						</a>
 					))}
 				</div>
-				<Button variant="outline" size="sm" href={profile.resumeUrl}>
-					Resume
-				</Button>
+				<div className="hidden items-center gap-2 md:flex">
+					<Button variant="ghost" size="sm" href={profile.resumes.ai}>
+						Machine Learning
+					</Button>
+					<span className="text-graphite/30">|</span>
+					<Button variant="outline" size="sm" href={profile.resumes.swe}>
+						Software Engineering
+					</Button>
+				</div>
 			</div>
 		</nav>
 	);

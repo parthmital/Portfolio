@@ -9,7 +9,7 @@ export function ProjectCard({ project, index }: Props) {
 
 	return (
 		<div className="notecard flex h-full flex-col">
-			<div className="flex items-baseline gap-3">
+			<div className="flex items-baseline gap-4">
 				<span className="font-hand text-graphite-muted text-base">
 					#{number}
 				</span>
@@ -17,7 +17,7 @@ export function ProjectCard({ project, index }: Props) {
 					href={project.github}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="font-arch text-graphite group inline-flex items-center gap-1.5 text-2xl"
+					className="font-arch text-graphite group inline-flex items-center gap-2 text-2xl"
 				>
 					<span className="cursor-pointer group-hover:underline">
 						{project.title}

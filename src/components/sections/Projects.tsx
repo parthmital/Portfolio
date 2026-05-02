@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { projects } from "@/data";
 import { PaperSheet } from "@/components/notebook/PaperSheet";
 import { SectionHeading } from "@/components/notebook/SectionHeading";
+import { FilterPill } from "@/components/notebook/FilterPill";
 import { ProjectCard } from "./ProjectCard";
 
 export function Projects() {
@@ -34,32 +35,22 @@ export function Projects() {
 
 			{/* Field Filter */}
 			<div className="mb-6 flex flex-wrap gap-2">
-				<button
+				<FilterPill
+					label="All"
+					isActive={selectedField === null}
 					onClick={() => setSelectedField(null)}
-					className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
-						selectedField === null
-							? "bg-graphite-soft text-paper border-graphite-soft"
-							: "text-graphite-soft border-paper-edge hover:border-graphite-muted hover:text-graphite bg-transparent"
-					}`}
-				>
-					All
-				</button>
+				/>
 				{fields.map((field) => (
-					<button
+					<FilterPill
 						key={field}
+						label={field}
+						isActive={selectedField === field}
 						onClick={() => setSelectedField(field)}
-						className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
-							selectedField === field
-								? "bg-graphite-soft text-paper border-graphite-soft"
-								: "text-graphite-soft border-paper-edge hover:border-graphite-muted hover:text-graphite bg-transparent"
-						}`}
-					>
-						{field}
-					</button>
+					/>
 				))}
 			</div>
 
-			<div className="grid gap-5 sm:grid-cols-2">
+			<div className="grid gap-4 sm:grid-cols-2">
 				{filteredProjects.map((p, i) => (
 					<ProjectCard key={p.id} project={p} index={i} />
 				))}

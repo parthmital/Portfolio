@@ -1,4 +1,4 @@
-export { profile, about, education, skillGroups } from "./profile";
+export { profile, about, education, creativeSkillGroups } from "./profile";
 export { projects } from "./projects";
 
 export type {

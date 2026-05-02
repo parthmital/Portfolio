@@ -138,6 +138,66 @@
 	font-family: var(--font-arch);
 }
 
+/* ===== Typography primitives ===== */
+
+@utility text-eyebrow {
+	font-family: var(--font-hand);
+	color: var(--color-graphite-soft);
+	font-size: 1rem;
+}
+
+@utility text-heading-xl {
+	font-family: var(--font-arch);
+	color: var(--color-graphite);
+	font-size: 3rem;
+	line-height: 1.05;
+	letter-spacing: -0.025em;
+}
+
+@utility text-heading-lg {
+	font-family: var(--font-arch);
+	color: var(--color-graphite);
+	font-size: 2.25rem;
+	line-height: 1.1;
+}
+
+@utility text-heading-md {
+	font-family: var(--font-arch);
+	color: var(--color-graphite);
+	font-size: 1.5rem;
+	line-height: 1.2;
+}
+
+@utility text-subtitle {
+	font-family: var(--font-scrawl);
+	color: var(--color-graphite);
+	font-size: 1.25rem;
+}
+
+@utility text-body {
+	color: var(--color-graphite);
+	font-size: 1rem;
+	line-height: 1.625;
+}
+
+@utility text-body-lg {
+	color: var(--color-graphite-soft);
+	font-size: 1.125rem;
+	line-height: 1.6;
+}
+
+@utility text-caption {
+	color: var(--color-graphite-soft);
+	font-size: 0.875rem;
+}
+
+@utility text-label {
+	color: var(--color-graphite-muted);
+	font-size: 0.75rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
 /* Paper sheet: a clean ruled card. Subtle, consistent. */
 .paper-sheet {
 	position: relative;

@@ -29,7 +29,7 @@ export function PaperSheet({
 			id={id}
 			data-margin={withMargin ? "true" : undefined}
 			className={cn(
-				"paper-sheet scroll-mt-24 px-5 py-8 sm:px-8 md:px-12 md:py-12 lg:px-16 lg:py-14",
+				"paper-sheet scroll-mt-24 px-6 py-8 sm:px-8 md:px-12 md:py-12 lg:px-16 lg:py-14",
 				variant === "alt" && "paper-sheet--alt",
 				className,
 			)}

@@ -50,7 +50,7 @@ export function BottomNav() {
 							key={id}
 							onClick={() => scrollToSection(id)}
 							className={cn(
-								"flex min-w-[56px] flex-col items-center gap-0.5 rounded-lg px-2 py-1.5 transition-colors",
+								"flex min-w-[56px] flex-col items-center gap-1 rounded-lg px-2 py-1.5 transition-colors",
 								isActive
 									? "bg-paper-2 text-graphite"
 									: "text-graphite-muted hover:text-graphite-soft",
