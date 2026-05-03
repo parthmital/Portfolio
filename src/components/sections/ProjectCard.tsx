@@ -32,7 +32,7 @@ export function ProjectCard({ project, index }: Props) {
 						strokeWidth="2"
 						strokeLinecap="round"
 						strokeLinejoin="round"
-						className="text-graphite-muted group-hover:text-graphite cursor-pointer"
+						className="text-graphite-muted group-hover:text-graphite shrink-0 cursor-pointer"
 					>
 						<path d="M7 17L17 7" />
 						<path d="M7 7h10v10" />
