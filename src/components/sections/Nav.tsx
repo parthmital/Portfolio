@@ -29,8 +29,16 @@ export function Nav() {
 			)}
 		>
 			<div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6 sm:px-10">
-				<a href="#top" className="font-arch text-graphite retrace text-xl">
-					{profile.name.split(" ")[0]}.
+				<a
+					href="#top"
+					className="font-arch text-graphite retrace flex items-center gap-2.5 text-xl"
+				>
+					<img
+						src="/Portfolio Website.svg"
+						alt="Portfolio Logo"
+						className="h-5 w-auto select-none"
+					/>
+					<span>{profile.name.split(" ")[0]}.</span>
 				</a>
 				<div className="text-graphite-soft hidden items-center gap-6 text-sm md:flex">
 					{links.map((l) => (
