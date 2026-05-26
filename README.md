@@ -453,21 +453,3 @@ This portfolio demonstrates several qualities useful for the developer community
 - Hiring managers evaluating a candidate's approach to code organisation
 
 **Why Developers Care**: The codebase prioritises readability and maintainability over cleverness. It shows practical application of modern web standards without unnecessary complexity, demonstrating that effective engineering often means choosing the right constraints rather than the maximum flexibility.
-
----
-
-## License and Credits
-
-This project is private and not licensed for redistribution.
-
-### Third-Party Resources
-
-- **Typography**: Google Fonts (Caveat, Kalam, Architects Daughter, Inter)
-- **Icons**: Lucide React (open source, ISC license)
-- **Build Tool**: Vite (MIT license)
-- **Styling**: Tailwind CSS (MIT license)
-- **Framework**: React (MIT license)
-
----
-
-_Built with attention to detail by Parth Mital._
