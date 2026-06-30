@@ -52,12 +52,8 @@ export function Nav() {
 					))}
 				</div>
 				<div className="hidden items-center gap-2 md:flex">
-					<Button variant="ghost" size="sm" href={profile.resumes.ai}>
-						Machine Learning
-					</Button>
-					<span className="text-graphite/30">|</span>
-					<Button variant="outline" size="sm" href={profile.resumes.swe}>
-						Software Engineering
+					<Button variant="outline" size="sm" href={profile.resumeUrl}>
+						Resume
 					</Button>
 				</div>
 			</div>

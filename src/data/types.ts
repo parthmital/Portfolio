@@ -20,10 +20,6 @@ export interface Profile {
 	github: string;
 	linkedin: string;
 	resumeUrl: string;
-	resumes: {
-		ai: string;
-		swe: string;
-	};
 }
 
 export interface About {

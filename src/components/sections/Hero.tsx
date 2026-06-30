@@ -31,11 +31,8 @@ export function Hero() {
 
 			<div className="mt-6 flex flex-wrap items-center gap-3">
 				<span className="text-graphite-soft text-sm">Download resume:</span>
-				<Button variant="ghost" size="sm" href={profile.resumes.ai}>
-					Machine Learning
-				</Button>
-				<Button variant="ghost" size="sm" href={profile.resumes.swe}>
-					Software Engineering
+				<Button variant="ghost" size="sm" href={profile.resumeUrl}>
+					Resume
 				</Button>
 			</div>
 		</PaperSheet>

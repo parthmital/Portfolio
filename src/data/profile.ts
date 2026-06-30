@@ -8,11 +8,7 @@ export const profile: Profile = {
 	email: "parth.mital.2004@gmail.com",
 	github: "https://github.com/parthmital",
 	linkedin: "https://linkedin.com/in/parthmital",
-	resumeUrl: "/Resume/Parth_Mital_Resume.pdf",
-	resumes: {
-		ai: "/Parth_Mital_AI.pdf",
-		swe: "/Parth_Mital_SWE.pdf",
-	},
+	resumeUrl: "/Parth_Mital_Resume.pdf",
 };
 
 export const about: About = {
