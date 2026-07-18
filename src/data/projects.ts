@@ -2,22 +2,22 @@ import type { Project } from "./types";
 
 export const projects: Project[] = [
 	{
-		id: "muse",
-		title: "Muse",
-		tagline: "Lossless Music Streaming Platform",
-		summary:
-			"Self-hosted music streaming system with hybrid recommendation engine combining vector embeddings, user behaviour, and popularity signals. Delivers personalised discovery, adaptive audio streaming, and full data ownership through a scalable microservices architecture.",
-		fields: ["Full-Stack"],
-		github: "https://github.com/parthmital/Muse",
-	},
-	{
 		id: "neuroscan",
 		title: "NeuroScan AI",
-		tagline: "AI Brain Tumour Analysis",
+		tagline: "Brain Tumour MRI Analysis System",
 		summary:
-			"Full-stack AI platform for automated brain tumour detection, classification, and 3D segmentation from MRI scans, delivering real-time predictions and volumetric analysis for clinical decision support.",
-		fields: ["Machine Learning"],
+			"Medical imaging platform built around a 3-stage AI pipeline for brain tumour detection, classification, and segmentation. Benchmarked 21 deep learning architectures across 4,705 MRI scans and BraTS 2020, reaching 99.59% detection, 98.58% classification, and 0.7655 Dice, with MRI inference, 3D visualisation, volumetric analysis, PDF reporting, JWT authentication, and REST APIs.",
+		fields: ["Machine Learning", "Research", "Full-Stack"],
 		github: "https://github.com/parthmital/NeuroScan-AI",
+	},
+	{
+		id: "muse",
+		title: "Muse",
+		tagline: "Self-Hosted Music Streaming & Discovery Platform",
+		summary:
+			"Spotify-inspired self-hosted streaming and discovery platform with a distributed 4-service architecture using Next.js, Fastify, PostgreSQL, and FastAPI. Includes Last.fm personalised ranking, 25-track queues, radio, Tidal resolution handling, job queues, workers, JWT, Docker, caching, and datasets for 10K profiles, 50K recommendations, and 100K playback sessions.",
+		fields: ["Full-Stack", "Backend"],
+		github: "https://github.com/parthmital/Muse",
 	},
 	{
 		id: "obsidian-flask",

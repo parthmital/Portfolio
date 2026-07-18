@@ -26,6 +26,16 @@ export interface About {
 	paragraphs: string[];
 }
 
+export interface ExperienceEntry {
+	company: string;
+	role: string;
+	period: string;
+	location: string;
+	bullets: string[];
+}
+
+export type Experience = ExperienceEntry[];
+
 export interface EducationEntry {
 	school: string;
 	degree: string;

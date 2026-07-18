@@ -1,4 +1,11 @@
-export { profile, about, education, creativeSkillGroups } from "./profile";
+export {
+	profile,
+	about,
+	experience,
+	education,
+	technicalSkillGroups,
+	creativeSkillGroups,
+} from "./profile";
 export { projects } from "./projects";
 
 export type {
@@ -6,6 +13,8 @@ export type {
 	Project,
 	Profile,
 	About,
+	Experience,
+	ExperienceEntry,
 	Education,
 	SkillGroup,
 } from "./types";

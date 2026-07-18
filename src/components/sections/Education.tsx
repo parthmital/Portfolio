@@ -4,13 +4,17 @@ import { SectionHeading } from "@/components/notebook/SectionHeading";
 
 export function Education() {
 	return (
-		<PaperSheet id="education">
-			<SectionHeading eyebrow="// page 5" title="Education" />
-			<div className="flex flex-col gap-6">
+		<PaperSheet id="education" variant="alt">
+			<SectionHeading
+				eyebrow="// page 6"
+				title="Education"
+				annotation="Formal record, kept compact."
+			/>
+			<div className="notecard">
 				{education.map((entry) => (
 					<div
 						key={entry.school}
-						className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between"
+						className="education-row grid gap-2 py-4 first:pt-0 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline"
 					>
 						<div>
 							<div className="font-arch text-graphite text-xl">

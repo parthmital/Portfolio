@@ -6,7 +6,7 @@ type Props = {
 
 export function SectionHeading({ eyebrow, title, annotation }: Props) {
 	return (
-		<header className="mb-8">
+		<header className="mb-7">
 			{eyebrow && (
 				<div className="font-hand text-graphite-soft mb-2 text-base">
 					{eyebrow}
@@ -16,7 +16,9 @@ export function SectionHeading({ eyebrow, title, annotation }: Props) {
 				{title}
 			</h2>
 			{annotation && (
-				<p className="annotation text-graphite-soft mt-4">{annotation}</p>
+				<p className="annotation text-graphite-soft mt-4 max-w-2xl">
+					{annotation}
+				</p>
 			)}
 		</header>
 	);

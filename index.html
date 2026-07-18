@@ -7,14 +7,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- Primary Meta Tags -->
-		<title>Parth Mital | Portfolio - AI, ML, & Software Engineering</title>
+		<title>Parth Mital | Software Engineering, AI & Full-Stack Portfolio</title>
 		<meta
 			name="title"
-			content="Parth Mital | Portfolio - AI, ML, & Software Engineering"
+			content="Parth Mital | Software Engineering, AI & Full-Stack Portfolio"
 		/>
 		<meta
 			name="description"
-			content="I build random stuff because I want to, and sometimes they turn out useful. CS student working across ML, CV, and full-stack."
+			content="Computer Science student at VIT building production software, AI pipelines, computer vision systems, and full-stack tools."
 		/>
 		<meta
 			name="keywords"
@@ -31,11 +31,11 @@
 		/>
 		<meta
 			property="og:title"
-			content="Parth Mital | Portfolio - AI, ML, & Software Engineering"
+			content="Parth Mital | Software Engineering, AI & Full-Stack Portfolio"
 		/>
 		<meta
 			property="og:description"
-			content="I build random stuff because I want to, and sometimes they turn out useful. CS student working across ML, CV, and full-stack."
+			content="Computer Science student at VIT building production software, AI pipelines, computer vision systems, and full-stack tools."
 		/>
 		<meta
 			property="og:image"
@@ -51,11 +51,11 @@
 		/>
 		<meta
 			property="twitter:title"
-			content="Parth Mital | Portfolio - AI, ML, & Software Engineering"
+			content="Parth Mital | Software Engineering, AI & Full-Stack Portfolio"
 		/>
 		<meta
 			property="twitter:description"
-			content="I build random stuff because I want to, and sometimes they turn out useful. CS student working across ML, CV, and full-stack."
+			content="Computer Science student at VIT building production software, AI pipelines, computer vision systems, and full-stack tools."
 		/>
 		<meta
 			property="twitter:image"
@@ -64,6 +64,17 @@
 
 		<!-- Theme Color -->
 		<meta name="theme-color" content="#000000" />
+		<script>
+			(() => {
+				try {
+					const theme = localStorage.getItem("portfolio-theme");
+					document.documentElement.dataset.theme =
+						theme === "light" ? "light" : "dark";
+				} catch {
+					document.documentElement.dataset.theme = "dark";
+				}
+			})();
+		</script>
 
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -85,12 +96,12 @@
 					"https://github.com/parthmital",
 					"https://linkedin.com/in/parthmital"
 				],
-				"jobTitle": "Software Engineer & AI Developer",
+				"jobTitle": "Software Developer & AI Engineer",
 				"worksFor": {
 					"@type": "Organization",
 					"name": "Vellore Institute of Technology"
 				},
-				"description": "I build random stuff because I want to, and sometimes they turn out useful. CS student working across ML, CV, and full-stack."
+				"description": "Computer Science student at VIT building production software, AI pipelines, computer vision systems, and full-stack tools."
 			}
 		</script>
 		<script type="application/ld+json">
