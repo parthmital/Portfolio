@@ -55,13 +55,4 @@ export const projects: Project[] = [
 		fields: ["Automation", "Web Scraping"],
 		github: "https://github.com/parthmital/VIT-Resource-Automation-Pipeline",
 	},
-	{
-		id: "vit-carpool",
-		title: "VIT Carpool",
-		tagline: "Structured Ride Sharing for Campus",
-		summary:
-			"Web platform for VIT students to post, discover, and join carpools with structured listings, real-time seat tracking, and campus-restricted authentication. Eliminates unstructured WhatsApp coordination through searchable, filterable ride data.",
-		fields: ["Full-Stack"],
-		github: "https://github.com/parthmital/Vit-Carpool",
-	},
 ];
