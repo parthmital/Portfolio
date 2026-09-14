@@ -26,7 +26,7 @@ export function ProjectCard({ project, index }: Props) {
 
 			<div className="mt-4">
 				<p
-					className={`text-graphite text-sm leading-relaxed ${
+					className={`text-graphite text-sm leading-relaxed whitespace-pre-line ${
 						expanded ? "" : "line-clamp-3"
 					}`}
 				>
@@ -40,14 +40,6 @@ export function ProjectCard({ project, index }: Props) {
 				>
 					{expanded ? "Show less" : "Read more"}
 				</button>
-			</div>
-
-			<div className="mt-auto flex flex-wrap gap-2 pt-4">
-				{project.fields.map((f) => (
-					<span key={f} className="tag text-xs">
-						{f}
-					</span>
-				))}
 			</div>
 		</div>
 	);

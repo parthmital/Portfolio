@@ -8,7 +8,6 @@ export interface Project {
 	title: string;
 	tagline: string;
 	summary: string;
-	fields: string[];
 	github: string;
 }
 

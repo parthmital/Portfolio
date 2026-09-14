@@ -29,26 +29,27 @@ export const about: About = {
 export const experience: Experience = [
 	{
 		company: "Concept Marketing",
-		role: "Independent Software Developer (Contract)",
-		period: "June 2026 - Present",
+		role: "Sole Software Developer & Maintainer (Contract)",
+		period: "June 2026 – July 2026",
 		location: "Vadodara, India",
 		bullets: [
-			"Rebuilt a legacy ASP.NET WebForms and SQL Server ERP into a Next.js, TypeScript, Prisma, and PostgreSQL application with 58 API routes.",
-			"Migrated 114K+ records from 42 legacy tables while preserving existing data and application compatibility.",
-			"Built modules for service management, AMC, billing, inventory, reporting, PDF generation, and Excel import/export, with authentication, testing, security, and cloud deployment.",
-			"Delivered a production system used by 60+ daily users, managing 2.8K customers, 28K service calls, and 1.1K AMC contracts.",
+			"Migrated legacy on-premise ASP.NET ERP to 24/7 Next.js, TypeScript, Prisma, & PostgreSQL on Vercel + Supabase; ported 114K+ records across 42 tables with zero data loss, eliminating single-PC server bottlenecks.",
+			"Partnered directly with operational staff (6–8 hrs daily software usage) to consolidate fragmented tools into unified workflows for technician dispatch, AMC contracts, billing, inventory variances, & automated PDF invoicing.",
+			"Secured internet-facing operations with role-based route access, CSRF validation, & PostgreSQL rate limits; scheduled AES-256 encrypted offsite backups to Google Drive with 30-day retention via GitHub Actions.",
+			"Engineered test suite with 587 Vitest unit & route tests across 85 files; delivered production platform managing 2.8K clients, 28K service calls, & 60+ users with ongoing solo maintenance.",
 		],
 	},
 	{
 		company: "LearnLine Edustation (IntelGrader)",
 		role: "AI Engineer Intern",
-		period: "June 2026",
+		period: "June 2026 – July 2026",
 		location: "Remote",
 		bullets: [
-			"Built a YOLOv8 crossout detection system from 100 annotated answer sheets and 277 bounding boxes across 5 classes, reducing OCR clutter by 7.11%.",
-			"Built an Android document scanning app with Kotlin, Jetpack Compose, CameraX, OpenCV, TensorFlow Lite, and ONNX Runtime.",
-			"Trained a MobileNetV3 model on 10K images, reducing model size by 82.5% from 12.5 MB to 2.2 MB and reaching 2.55 ms inference.",
-			"Built book ingestion, question bank, and lecture generation pipelines using PyMuPDF, EasyOCR, AWS Bedrock, LLMs, Stable Diffusion, TTS, and text-to-video models.",
+			"Architected native Android capture app in Kotlin, Jetpack Compose, CameraX, & OpenCV; implemented real-time quad stability auto-capture across 7 stable frames, perspective rectification, & native JavaScript bridge.",
+			"Trained multi-task MobileNetV3 to score image quality & 7 defect flags; applied float16 TFLite quantization, shrinking model size by 82.5% to 2.19 MB with 2.55 ms edge inference latency.",
+			"Fine-tuned YOLOv8s struck-out text detector via 2-phase training; integrated downstream masking to cut OCR token clutter by 7.11% while maintaining 80% to 96% semantic similarity via RapidFuzz.",
+			"Designed native PyMuPDF pipeline extracting 1,033 questions & 383 visuals; generated dual-GPU EasyOCR cache across 4,574 textbook pages with AWS Bedrock structured LLM parsing.",
+			"Directed technical implementation with co-founders to deploy autonomous educational web generator across 6 archetypes, integrating AWS Bedrock LessonSpec synthesis with Playwright & axe-core accessibility gates.",
 		],
 	},
 ];
