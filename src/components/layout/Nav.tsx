@@ -1,29 +1,14 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/cn";
 import { profile } from "@/data";
-import { Button } from "@/components/notebook/Button";
-
-const links = [
-	{ href: "#about", label: "About" },
-	{ href: "#experience", label: "Experience" },
-	{ href: "#projects", label: "Projects" },
-	{ href: "#skills", label: "Skills" },
-	{ href: "#education", label: "Education" },
-	{ href: "#contact", label: "Contact" },
-];
-
-type Theme = "dark" | "light";
-
-function getInitialTheme(): Theme {
-	if (typeof window === "undefined") return "dark";
-	const storedTheme = window.localStorage.getItem("portfolio-theme");
-	return storedTheme === "light" ? "light" : "dark";
-}
+import { Button } from "@/components/notebook";
+import { useTheme } from "@/hooks/useTheme";
+import { logoUrl, navSections } from "@/site/navigation";
 
 export function Nav() {
 	const [scrolled, setScrolled] = useState(false);
-	const [theme, setTheme] = useState<Theme>(getInitialTheme);
+	const { theme, toggleTheme } = useTheme();
 
 	useEffect(() => {
 		const onScroll = () => setScrolled(window.scrollY > 12);
@@ -31,18 +16,6 @@ export function Nav() {
 		window.addEventListener("scroll", onScroll, { passive: true });
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
-
-	useEffect(() => {
-		document.documentElement.dataset.theme = theme;
-		window.localStorage.setItem("portfolio-theme", theme);
-		document
-			.querySelector('meta[name="theme-color"]')
-			?.setAttribute("content", theme === "light" ? "#f2f2f2" : "#000000");
-	}, [theme]);
-
-	const toggleTheme = () => {
-		setTheme((current) => (current === "dark" ? "light" : "dark"));
-	};
 
 	const ThemeIcon = theme === "dark" ? Sun : Moon;
 	const nextTheme = theme === "dark" ? "light" : "dark";
@@ -62,20 +35,20 @@ export function Nav() {
 					className="font-arch text-graphite retrace flex items-center gap-2.5 text-xl"
 				>
 					<img
-						src="/Portfolio Website.svg"
+						src={logoUrl}
 						alt="Portfolio Logo"
 						className="theme-logo h-5 w-auto select-none"
 					/>
 					<span>{profile.name.split(" ")[0]}.</span>
 				</a>
 				<div className="text-graphite-soft hidden items-center gap-1 text-sm md:flex">
-					{links.map((l) => (
+					{navSections.map(({ id, label }) => (
 						<a
-							key={l.href}
-							href={l.href}
+							key={id}
+							href={`#${id}`}
 							className="retrace hover:text-graphite rounded-md px-3 py-2"
 						>
-							{l.label}
+							{label}
 						</a>
 					))}
 				</div>

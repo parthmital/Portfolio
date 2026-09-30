@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import type { Project } from "@/data";
+import { ExpandToggle } from "@/components/notebook";
 
 type Props = { project: Project; index: number };
 
@@ -32,14 +33,10 @@ export function ProjectCard({ project, index }: Props) {
 				>
 					{project.summary}
 				</p>
-				<button
-					type="button"
-					onClick={() => setExpanded(!expanded)}
-					aria-expanded={expanded}
-					className="text-graphite-muted hover:text-graphite mt-2 cursor-pointer text-xs underline"
-				>
-					{expanded ? "Show less" : "Read more"}
-				</button>
+				<ExpandToggle
+					expanded={expanded}
+					onToggle={() => setExpanded(!expanded)}
+				/>
 			</div>
 		</div>
 	);

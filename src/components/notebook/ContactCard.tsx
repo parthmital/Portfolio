@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { newTabLinkProps } from "@/lib/links";
 
 interface ContactCardProps {
 	label: string;
@@ -7,13 +8,10 @@ interface ContactCardProps {
 }
 
 export function ContactCard({ label, value, href }: ContactCardProps) {
-	const external = href.startsWith("http");
-
 	return (
 		<a
 			href={href}
-			target={external ? "_blank" : undefined}
-			rel={external ? "noopener noreferrer" : undefined}
+			{...newTabLinkProps(href)}
 			className="group border-paper-edge bg-paper/60 retrace hover:border-graphite/60 block flex-auto rounded-md border p-4 transition-colors"
 		>
 			<div className="text-graphite-muted text-xs uppercase">{label}</div>

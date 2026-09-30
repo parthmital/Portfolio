@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/cn";
 
 type Props = {
 	id?: string;
@@ -19,11 +19,9 @@ export function PaperSheet({
 	id,
 	children,
 	variant = "default",
-	withMargin: withMarginProp = true,
+	withMargin = true,
 	className = "",
 }: Props) {
-	// Margin line only shows on sm+ screens
-	const withMargin = withMarginProp;
 	return (
 		<section
 			id={id}

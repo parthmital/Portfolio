@@ -1,5 +1,6 @@
 import type { ReactNode, ButtonHTMLAttributes } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/cn";
+import { newTabLinkProps } from "@/lib/links";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: "filled" | "outline" | "ghost";
@@ -32,12 +33,7 @@ export function Button({
 
 	if (href) {
 		return (
-			<a
-				href={href}
-				className={baseClasses}
-				target={href.startsWith("http") ? "_blank" : undefined}
-				rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-			>
+			<a href={href} className={baseClasses} {...newTabLinkProps(href)}>
 				{children}
 			</a>
 		);

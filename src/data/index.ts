@@ -9,7 +9,6 @@ export {
 export { projects } from "./projects";
 
 export type {
-	ProjectLink,
 	Project,
 	Profile,
 	About,

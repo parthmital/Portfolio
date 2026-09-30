@@ -43,35 +43,25 @@ A single page personal portfolio website for Parth Mital. It presents profile de
 
 ## Quick start
 
-Run these commands from the repository root:
+Run this from the repository root:
 
 ```powershell
-npm install
 npm run dev
 ```
 
-What the commands do:
+`npm run dev` runs [scripts/dev.mjs](scripts/dev.mjs), the only launcher. It:
 
-1. `npm install`
-   - Installs dependencies from `package-lock.json`.
-   - Run it in the repository root, where `package.json` is present.
-   - Expected result: `node_modules` is created and npm exits without errors.
-   - Common error: if Node.js is too old, npm or Vite may fail. Install Node.js `^20.19.0 || >=22.12.0`.
+1. Checks that Node.js matches `engines.node` (`^20.19.0 || >=22.12.0`, pinned to 22 in `.nvmrc`).
+2. Runs `npm ci` on the first run, or when `package-lock.json` changed since the last install (hash stored in `node_modules/.dev-lock-hash`). Later runs skip installation.
+3. Fails fast with a clear message if port `5173` is busy.
+4. Starts Vite on `http://localhost:5173/` and opens the browser (not when `CI` is set).
+5. Stops the whole process tree on Ctrl+C.
 
-2. `npm run dev`
-   - Starts the Vite development server.
-   - Run it in the repository root.
-   - Expected result: Vite prints a local URL, usually `http://localhost:5173/`.
-   - Common error: if port `5173` is already in use, Vite will offer another port.
-
-The project was verified locally with:
+Run every check CI runs with:
 
 ```powershell
-npm run build
-npm run lint
+npm run check
 ```
-
-Both commands passed in the current repository.
 
 ## Project overview
 
@@ -104,7 +94,6 @@ The verified goals in the repository are:
 
 - Present Parth Mital's portfolio as a single page site.
 - Keep portfolio data type checked through TypeScript interfaces.
-- Provide project filtering by field.
 - Provide expandable project and experience details.
 - Provide mobile navigation and desktop navigation.
 - Provide a persisted light and dark theme setting.
@@ -116,7 +105,6 @@ The verified goals in the repository are:
 - Responsive top navigation for desktop and bottom navigation for mobile.
 - Light and dark theme toggle stored in `localStorage` under `portfolio-theme`.
 - Resume link to `/Parth_Mital_Resume.pdf`.
-- Project filtering by seven project fields.
 - Expand and collapse behaviour for project summaries and experience entries.
 - Contact cards for email, GitHub, and LinkedIn.
 - SEO metadata, Open Graph metadata, Twitter card metadata, JSON-LD, `robots.txt`, and `sitemap.xml`.
@@ -139,22 +127,29 @@ flowchart TD
     Browser[Browser] --> HTML[index.html]
     HTML --> ReactEntry[src/main.tsx]
     ReactEntry --> App[src/App.tsx]
-    App --> Sections[Section components]
-    Sections --> Notebook[Notebook UI components]
+    App --> Layout[src/components/layout]
+    App --> Sections[src/components/sections]
+    Layout --> Site[src/site/navigation.ts]
+    Layout --> Hooks[src/hooks]
+    Sections --> Notebook[src/components/notebook]
     Sections --> Data[src/data]
-    Notebook --> Utils[src/lib/utils.ts]
+    Notebook --> Lib[src/lib]
     App --> Styles[src/styles.css]
     Vite[Vite build] --> Dist[dist static output]
 ```
 
-Architecture notes:
+Architecture notes (full rules in [ARCHITECTURE.md](ARCHITECTURE.md)):
 
 - `index.html` owns metadata, font links, theme bootstrap script, and the React root element.
 - `src/main.tsx` mounts React into `#root`.
 - `src/App.tsx` composes navigation, seven content sections, and mobile bottom navigation.
 - `src/data` contains profile, project, experience, education, and skill data.
+- `src/site/navigation.ts` is the single list of page sections used by both navigation bars, plus the logo path.
+- `src/components/layout` holds the top and bottom navigation.
 - `src/components/sections` renders page specific sections.
-- `src/components/notebook` contains reusable UI primitives.
+- `src/components/notebook` contains reusable UI primitives, imported through its `index.ts`.
+- `src/hooks` holds browser-state hooks (`useTheme`, `useActiveSection`).
+- `src/lib` holds framework-free helpers (`cn`, `newTabLinkProps`).
 - `src/styles.css` defines Tailwind imports, theme tokens, CSS utilities, and responsive layout classes.
 
 ## Application workflow
@@ -170,23 +165,15 @@ Architecture notes:
 
 ### Theme workflow
 
-1. `Nav.tsx` reads the initial theme from `localStorage`.
+1. `useTheme` (used by `Nav.tsx`) reads the initial theme from `localStorage`.
 2. The theme button toggles between `dark` and `light`.
 3. The selected theme is written to `document.documentElement.dataset.theme`.
 4. The selected theme is saved back to `localStorage`.
 5. The `theme-color` meta tag is updated for the selected theme.
 
-### Project filtering workflow
-
-1. `Projects.tsx` creates a unique sorted list of project fields from `projects`.
-2. The user selects a `FilterPill`.
-3. React updates `selectedField`.
-4. `useMemo` recalculates the filtered project list.
-5. `ProjectCard` renders only the matching projects.
-
 ### Mobile navigation workflow
 
-1. `BottomNav.tsx` observes section elements with `IntersectionObserver`.
+1. `BottomNav.tsx` uses `useActiveSection`, which observes section elements with `IntersectionObserver`.
 2. The active section changes when a section intersects the configured viewport band.
 3. The matching mobile nav item receives active styling.
 4. Tapping a nav item scrolls to the matching section.
@@ -207,8 +194,8 @@ Versions below are the exact installed versions from `package-lock.json`.
 | `@tailwindcss/vite`           |   4.2.4 | Tailwind integration with Vite          | `vite.config.ts`                                  |
 | `tw-animate-css`              |   1.4.0 | Animation utility import                | `src/styles.css`                                  |
 | Lucide React                  | 0.575.0 | SVG icons                               | Navigation, buttons, contact cards, project cards |
-| `clsx`                        |   2.1.1 | Conditional class values                | `src/lib/utils.ts`                                |
-| `tailwind-merge`              |   3.5.0 | Tailwind class merging                  | `src/lib/utils.ts`                                |
+| `clsx`                        |   2.1.1 | Conditional class values                | `src/lib/cn.ts`                                   |
+| `tailwind-merge`              |   3.5.0 | Tailwind class merging                  | `src/lib/cn.ts`                                   |
 | ESLint                        |  9.39.4 | Static code checks                      | `eslint.config.js`, `npm run lint`                |
 | Prettier                      |   3.8.3 | Code formatting                         | `.prettierrc.json`, `npm run format`              |
 | `prettier-plugin-tailwindcss` |   0.8.0 | Tailwind class formatting               | `.prettierrc.json`                                |
@@ -219,8 +206,15 @@ The project also uses Google Fonts through `index.html`: Caveat, Kalam, Architec
 
 ```text
 .
+|-- .dependency-cruiser.cjs
+|-- .github
+|   `-- workflows
+|       `-- ci.yml
 |-- .gitignore
+|-- .jscpd.json
+|-- .nvmrc
 |-- .prettierrc.json
+|-- ARCHITECTURE.md
 |-- README.md
 |-- eslint.config.js
 |-- index.html
@@ -233,27 +227,30 @@ The project also uses Google Fonts through `index.html`: Caveat, Kalam, Architec
 |   |-- Portfolio Website.svg
 |   |-- robots.txt
 |   `-- sitemap.xml
+|-- scripts
+|   `-- dev.mjs
 `-- src
     |-- App.tsx
     |-- main.tsx
     |-- styles.css
     |-- components
+    |   |-- layout
+    |   |   |-- BottomNav.tsx
+    |   |   `-- Nav.tsx
     |   |-- notebook
     |   |   |-- Button.tsx
     |   |   |-- ContactCard.tsx
+    |   |   |-- ExpandToggle.tsx
     |   |   |-- Eyebrow.tsx
-    |   |   |-- FilterPill.tsx
     |   |   |-- PaperSheet.tsx
     |   |   |-- SectionHeading.tsx
     |   |   `-- index.ts
     |   `-- sections
     |       |-- About.tsx
-    |       |-- BottomNav.tsx
     |       |-- Contact.tsx
     |       |-- Education.tsx
     |       |-- Experience.tsx
     |       |-- Hero.tsx
-    |       |-- Nav.tsx
     |       |-- ProjectCard.tsx
     |       |-- Projects.tsx
     |       `-- Skills.tsx
@@ -262,8 +259,14 @@ The project also uses Google Fonts through `index.html`: Caveat, Kalam, Architec
     |   |-- profile.ts
     |   |-- projects.ts
     |   `-- types.ts
-    `-- lib
-        `-- utils.ts
+    |-- hooks
+    |   |-- useActiveSection.ts
+    |   `-- useTheme.ts
+    |-- lib
+    |   |-- cn.ts
+    |   `-- links.ts
+    `-- site
+        `-- navigation.ts
 ```
 
 Important files:
@@ -274,6 +277,9 @@ Important files:
 - `tsconfig.json`: TypeScript compiler settings and path alias.
 - `eslint.config.js`: ESLint flat config for TypeScript, React hooks, React refresh, and Prettier.
 - `.prettierrc.json`: tab indentation and Tailwind class sorting plugin.
+- `.dependency-cruiser.cjs`: module boundary rules enforced by `npm run arch`.
+- `.jscpd.json`: clone detection settings enforced by `npm run dupes`.
+- `scripts/dev.mjs`: the `npm run dev` launcher.
 - `index.html`: metadata, theme bootstrap script, fonts, JSON-LD, and React root.
 - `src/styles.css`: Tailwind imports, theme tokens, custom utilities, and responsive layout CSS.
 - `src/data/profile.ts`: profile, about, experience, education, and skills data.
@@ -297,31 +303,9 @@ Current local verification environment:
 
 ## Local installation
 
-1. Clone the repository or open the project folder.
+1. Clone the repository.
 2. Open a terminal in the repository root.
-3. Confirm that `package.json` exists:
-
-```powershell
-Get-Item package.json
-```
-
-Expected result: PowerShell prints the file entry for `package.json`.
-
-## Dependency installation
-
-Install dependencies:
-
-```powershell
-npm install
-```
-
-What this does:
-
-- Reads `package.json` and `package-lock.json`.
-- Installs packages into `node_modules`.
-- Keeps dependency versions aligned with the lockfile.
-
-This command was not rerun while preparing this README because `node_modules` already exists in the working copy and dependency versions were verified from `package-lock.json`.
+3. Run `npm run dev`. It installs dependencies with `npm ci` on the first run.
 
 ## Environment configuration
 
@@ -349,40 +333,29 @@ Start the development server:
 npm run dev
 ```
 
-What this does:
-
-- Runs `vite`.
-- Serves the React app locally.
-- Enables Vite development behaviour for frontend changes.
-
-Expected result:
-
-- Vite prints a local URL.
-- Vite commonly prints a URL on port `5173` when that port is available.
-- If the first port is busy, Vite can use another port.
+See [Quick start](#quick-start) for what the launcher does. Vite runs with `--strictPort`, so it never silently moves to another port.
 
 Preview a production build:
 
 ```powershell
+npm run build
 npm run preview
 ```
 
-What this does:
-
-- Serves the existing `dist` output.
-- It should be run after `npm run build`.
-
-`npm run preview` starts a server process and was not executed during README verification because it keeps running until stopped.
-
 ## Available scripts and commands
 
-| Command           | Defined in     | Purpose                             | Verification status                                                                  |
-| ----------------- | -------------- | ----------------------------------- | ------------------------------------------------------------------------------------ |
-| `npm run dev`     | `package.json` | Starts Vite development server.     | Verified from script definition. Not executed because it starts a persistent server. |
-| `npm run build`   | `package.json` | Runs `tsc && vite build`.           | Executed successfully.                                                               |
-| `npm run preview` | `package.json` | Serves `dist` through Vite preview. | Verified from script definition. Not executed because it starts a persistent server. |
-| `npm run lint`    | `package.json` | Runs `eslint .`.                    | Executed successfully.                                                               |
-| `npm run format`  | `package.json` | Runs `prettier --write .`.          | Verified from script definition. Not executed because it rewrites files.             |
+| Command                | Purpose                                                                  |
+| ---------------------- | ------------------------------------------------------------------------ |
+| `npm run dev`          | Installs dependencies if needed, then starts Vite (`scripts/dev.mjs`).   |
+| `npm run build`        | Type checks with `tsc`, then builds `dist` with Vite.                    |
+| `npm run preview`      | Serves the built `dist` output.                                          |
+| `npm run lint`         | Runs ESLint.                                                             |
+| `npm run typecheck`    | Runs `tsc`.                                                              |
+| `npm run format`       | Formats all files with Prettier (rewrites files).                        |
+| `npm run format:check` | Fails if any file is not Prettier formatted.                             |
+| `npm run arch`         | Checks module boundaries and cycles with dependency-cruiser.             |
+| `npm run dupes`        | Fails on any duplicated code block (jscpd, zero threshold).              |
+| `npm run check`        | Runs format check, lint, architecture, duplication, and build, as in CI. |
 
 ## API documentation
 
@@ -403,8 +376,7 @@ Runtime input validation is minimal because the site has no user submitted forms
 Verified validation related behaviour:
 
 - Portfolio data is shaped by TypeScript interfaces in `src/data/types.ts`.
-- Project filters are generated from existing project fields, not from free text input.
-- Theme selection is restricted to `dark` or `light` in `Nav.tsx` and the inline script in `index.html`.
+- Theme selection is restricted to `dark` or `light` in `src/hooks/useTheme.ts` and the inline script in `index.html`.
 
 There is no schema validation library such as Zod, Yup, Valibot, or Joi in `package.json`.
 
@@ -414,7 +386,7 @@ Verified error handling:
 
 - The inline theme script in `index.html` wraps `localStorage` access in `try` and `catch`.
 - If theme access fails, the document falls back to `dark`.
-- React effects in `Nav.tsx` and `BottomNav.tsx` remove event listeners and disconnect observers during cleanup.
+- React effects in `Nav.tsx` and `useActiveSection` remove event listeners and disconnect observers during cleanup.
 
 There is no global error boundary and no backend error handling because the repository is a static frontend.
 
@@ -451,27 +423,13 @@ Not measured in the current repository.
 
 ## Code quality checks
 
-The available code quality command is:
+Run all checks with:
 
 ```powershell
-npm run lint
+npm run check
 ```
 
-Result from verification:
-
-```text
-eslint .
-```
-
-The command exited successfully.
-
-Formatting command:
-
-```powershell
-npm run format
-```
-
-This runs `prettier --write .`, which modifies files. It was not executed during README verification.
+This runs `format:check`, `lint`, `arch`, `dupes`, and `build`. The same command runs in CI.
 
 Formatting configuration:
 
@@ -523,7 +481,7 @@ Deployment configuration present in the repository:
 
 - No Vercel config file was found.
 - No Netlify config file was found.
-- No GitHub Actions workflow was found.
+- `.github/workflows/ci.yml` runs `npm run check`; it does not deploy.
 - `index.html`, `robots.txt`, and `sitemap.xml` reference `https://parthmital-portfolio.vercel.app/`.
 
 Generic static hosting settings:
@@ -538,12 +496,7 @@ Do not run deployment commands without checking the target hosting provider and 
 
 ## CI or CD process
 
-No CI or CD workflow is present in the repository.
-
-Verified absence:
-
-- No `.github/workflows` directory was found.
-- No deployment pipeline file was found in the repository root.
+[.github/workflows/ci.yml](.github/workflows/ci.yml) runs on pushes to `main` and on pull requests. It installs Node from `.nvmrc`, runs `npm ci`, then `npm run check`. There is no deployment pipeline in the repository.
 
 ## Repository metrics
 
@@ -559,10 +512,9 @@ Verified absence:
 | CSS files in `src`                   |                                       1 | Node file count                                            | `src/styles.css`                                              |
 | Public files                         |                                       4 | `public` directory                                         | SVG, PDF, robots, sitemap                                     |
 | Main page sections                   |                                       7 | `src/App.tsx`                                              | Hero, About, Experience, Projects, Skills, Education, Contact |
-| Section component files              |                                      10 | `src/components/sections`                                  | Includes nav and project card components                      |
+| Section component files              |                                       8 | `src/components/sections`                                  | Includes the project card component                           |
 | Notebook component files             |                                       6 | `src/components/notebook`                                  | Reusable UI components                                        |
 | Project entries                      |                                       7 | `src/data/projects.ts`                                     | Selected portfolio projects                                   |
-| Unique project fields                |                                       7 | `src/data/projects.ts`                                     | Used for filtering                                            |
 | Experience entries                   |                                       2 | `src/data/profile.ts`                                      | Rendered in Experience section                                |
 | Education entries                    |                                       3 | `src/data/profile.ts`                                      | Rendered in Education section                                 |
 | Technical skill groups               |                                       5 | `src/data/profile.ts`                                      | 29 technical skill items                                      |
@@ -686,10 +638,11 @@ Follow the existing repository style:
 - Keep portfolio content in `src/data`.
 - Keep reusable primitives in `src/components/notebook`.
 - Keep page sections in `src/components/sections`.
-- Use the `cn` helper from `src/lib/utils.ts` when conditional class merging is needed.
+- Follow the module rules and "where new code goes" in `ARCHITECTURE.md`.
+- Use the `cn` helper from `src/lib/cn.ts` when conditional class merging is needed.
 - Use the `@/` import alias for source imports.
 - Use tabs for indentation, as configured in `.prettierrc.json`.
-- Run `npm run lint` after non trivial code changes.
+- Run `npm run check` after non trivial code changes.
 
 ## Licence
 

@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { profile } from "@/data";
-import { PaperSheet } from "@/components/notebook/PaperSheet";
-import { Button } from "@/components/notebook/Button";
+import { logoUrl } from "@/site/navigation";
+import { Button, PaperSheet } from "@/components/notebook";
 
 const focusAreas = [
 	"Production software",
@@ -28,7 +28,7 @@ export function Hero() {
 				<div>
 					<div className="hero-stamp mb-4 md:mb-6">
 						<img
-							src="/Portfolio Website.svg"
+							src={logoUrl}
 							alt=""
 							className="theme-logo h-4 w-auto opacity-80"
 							aria-hidden="true"

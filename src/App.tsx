@@ -1,5 +1,5 @@
-import { Nav } from "@/components/sections/Nav";
-import { BottomNav } from "@/components/sections/BottomNav";
+import { Nav } from "@/components/layout/Nav";
+import { BottomNav } from "@/components/layout/BottomNav";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";

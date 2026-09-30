@@ -1,6 +1,5 @@
 import { projects } from "@/data";
-import { PaperSheet } from "@/components/notebook/PaperSheet";
-import { SectionHeading } from "@/components/notebook/SectionHeading";
+import { PaperSheet, SectionHeading } from "@/components/notebook";
 import { ProjectCard } from "./ProjectCard";
 
 export function Projects() {

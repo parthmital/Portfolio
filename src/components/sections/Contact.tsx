@@ -1,7 +1,5 @@
 import { profile } from "@/data";
-import { PaperSheet } from "@/components/notebook/PaperSheet";
-import { SectionHeading } from "@/components/notebook/SectionHeading";
-import { ContactCard } from "@/components/notebook/ContactCard";
+import { ContactCard, PaperSheet, SectionHeading } from "@/components/notebook";
 
 export function Contact() {
 	const links = [

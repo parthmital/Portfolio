@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { experience } from "@/data";
 import type { ExperienceEntry } from "@/data";
-import { PaperSheet } from "@/components/notebook/PaperSheet";
-import { SectionHeading } from "@/components/notebook/SectionHeading";
+import {
+	ExpandToggle,
+	PaperSheet,
+	SectionHeading,
+} from "@/components/notebook";
 
 type ExperienceCardProps = {
 	entry: ExperienceEntry;
@@ -52,14 +55,11 @@ function ExperienceCard({ entry, index }: ExperienceCardProps) {
 			</ul>
 
 			{canExpand && (
-				<button
-					type="button"
-					onClick={() => setExpanded(!expanded)}
-					aria-expanded={expanded}
-					className="text-graphite-muted hover:text-graphite mt-2 w-fit cursor-pointer text-xs underline"
-				>
-					{expanded ? "Show less" : "Read more"}
-				</button>
+				<ExpandToggle
+					expanded={expanded}
+					onToggle={() => setExpanded(!expanded)}
+					className="w-fit"
+				/>
 			)}
 		</article>
 	);
