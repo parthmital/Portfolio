@@ -18,7 +18,7 @@ export function ContactCard({ label, value, href }: ContactCardProps) {
 			<div className="font-arch text-graphite mt-1 text-lg break-words">
 				{value}{" "}
 				<span className="text-graphite-muted group-hover:text-graphite transition-colors">
-					<ArrowUpRight className="inline h-4 w-4" />
+					<ArrowUpRight className="inline h-4 w-4" strokeWidth={1.5} />
 				</span>
 			</div>
 		</a>

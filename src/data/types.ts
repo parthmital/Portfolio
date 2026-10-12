@@ -1,30 +1,51 @@
-export interface Project {
+/** A one-sentence summary followed by its supporting points. */
+export interface Highlighted {
+	summary: string;
+	highlights: string[];
+}
+
+export interface Project extends Highlighted {
 	id: string;
 	title: string;
-	summary: string;
 	github: string;
+}
+
+/** A headline figure shown in the hero. */
+export interface ProofPoint {
+	value: string;
+	label: string;
+}
+
+export interface ContactLink {
+	label: string;
+	value: string;
+	href: string;
 }
 
 export interface Profile {
 	name: string;
 	role: string;
 	tagline: string;
-	email: string;
-	github: string;
-	linkedin: string;
 	resumeUrl: string;
+	focusAreas: string[];
+	proofPoints: ProofPoint[];
+	contacts: ContactLink[];
+}
+
+export interface AboutNote {
+	label: string;
+	text: string;
 }
 
 export interface About {
 	paragraphs: string[];
+	notes: AboutNote[];
 }
 
-export interface ExperienceEntry {
+export interface ExperienceEntry extends Highlighted {
 	company: string;
 	role: string;
 	period: string;
-	summary: string;
-	bullets: string[];
 }
 
 export type Experience = ExperienceEntry[];

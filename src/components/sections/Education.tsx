@@ -1,11 +1,12 @@
 import { education } from "@/data";
 import { PaperSheet, SectionHeading } from "@/components/notebook";
+import { pageEyebrow } from "@/site/navigation";
 
 export function Education() {
 	return (
 		<PaperSheet id="education" variant="alt">
 			<SectionHeading
-				eyebrow="// page 6"
+				eyebrow={pageEyebrow("education")}
 				title="Education"
 				annotation="Formal record, kept compact."
 			/>

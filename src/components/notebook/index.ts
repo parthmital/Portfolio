@@ -1,6 +1,5 @@
-export { Button } from "./Button";
+export { ButtonLink } from "./ButtonLink";
 export { ContactCard } from "./ContactCard";
-export { Eyebrow } from "./Eyebrow";
-export { ExpandToggle } from "./ExpandToggle";
+export { Highlights } from "./Highlights";
 export { PaperSheet } from "./PaperSheet";
 export { SectionHeading } from "./SectionHeading";

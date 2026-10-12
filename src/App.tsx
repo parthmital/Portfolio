@@ -1,5 +1,4 @@
-import { Nav } from "@/components/layout/Nav";
-import { BottomNav } from "@/components/layout/BottomNav";
+import { SiteNavigation } from "@/components/layout/SiteNavigation";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
@@ -11,8 +10,12 @@ import { Contact } from "@/components/sections/Contact";
 export default function App() {
 	return (
 		<div className="notebook-app text-graphite relative min-h-screen overflow-x-hidden">
-			<Nav />
-			<main className="relative z-10 mx-auto grid max-w-6xl gap-5 px-4 pt-20 pb-24 sm:px-6 md:gap-8 md:px-8 md:pt-24 md:pb-12">
+			<SiteNavigation />
+			<main
+				id="main"
+				tabIndex={-1}
+				className="relative z-10 mx-auto grid max-w-6xl gap-5 px-4 pt-20 pb-24 sm:px-6 md:gap-8 md:px-8 md:pt-24 md:pb-12"
+			>
 				<Hero />
 				<About />
 				<Experience />
@@ -21,7 +24,6 @@ export default function App() {
 				<Education />
 				<Contact />
 			</main>
-			<BottomNav />
 		</div>
 	);
 }

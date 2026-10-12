@@ -1,6 +1,7 @@
 import { creativeSkillGroups, technicalSkillGroups } from "@/data";
 import type { SkillGroup } from "@/data";
 import { PaperSheet, SectionHeading } from "@/components/notebook";
+import { pageEyebrow } from "@/site/navigation";
 
 type SkillGroupListProps = {
 	groups: SkillGroup[];
@@ -44,7 +45,7 @@ export function Skills() {
 	return (
 		<PaperSheet id="skills">
 			<SectionHeading
-				eyebrow="// page 5"
+				eyebrow={pageEyebrow("skills")}
 				title="Skills"
 				annotation="Technical stack from the resume, with creative tools kept visible."
 			/>

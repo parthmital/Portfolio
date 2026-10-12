@@ -8,12 +8,4 @@ export {
 } from "./profile";
 export { projects } from "./projects";
 
-export type {
-	Project,
-	Profile,
-	About,
-	Experience,
-	ExperienceEntry,
-	Education,
-	SkillGroup,
-} from "./types";
+export type { Project, ExperienceEntry, SkillGroup } from "./types";

@@ -1,40 +1,31 @@
-import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import type { Project } from "@/data";
-import { ExpandToggle } from "@/components/notebook";
+import { Highlights } from "@/components/notebook";
+import { newTabLinkProps } from "@/lib/links";
 
 type Props = { project: Project; index: number };
 
 export function ProjectCard({ project, index }: Props) {
-	const number = String(index + 1).padStart(2, "0");
-	const [expanded, setExpanded] = useState(false);
-
 	return (
-		<div className="project-card notecard flex h-full flex-col">
-			<span className="project-index">case {number}</span>
-			<a
-				href={project.github}
-				target="_blank"
-				rel="noopener noreferrer"
-				className="case-link font-arch text-graphite group mt-2 inline-flex items-center gap-2 text-2xl leading-tight"
-			>
-				<span>{project.title}</span>
-				<ExternalLink className="text-graphite-muted group-hover:text-graphite h-3.5 w-3.5 shrink-0 transition-colors" />
-			</a>
-
-			<div className="mt-4">
-				<p
-					className={`text-graphite text-sm leading-relaxed whitespace-pre-line ${
-						expanded ? "" : "line-clamp-3"
-					}`}
+		<article className="project-card notecard flex h-full flex-col">
+			<span className="project-index">
+				case {String(index + 1).padStart(2, "0")}
+			</span>
+			<h3 className="font-arch mt-1 text-2xl leading-tight">
+				<a
+					href={project.github}
+					{...newTabLinkProps(project.github)}
+					className="case-link text-graphite group inline-block py-2"
 				>
-					{project.summary}
-				</p>
-				<ExpandToggle
-					expanded={expanded}
-					onToggle={() => setExpanded(!expanded)}
-				/>
-			</div>
-		</div>
+					<span>{project.title}</span>
+					<ExternalLink
+						className="text-graphite-muted group-hover:text-graphite ml-2 inline h-3.5 w-3.5 align-baseline transition-colors"
+						strokeWidth={1.5}
+					/>
+					<span className="sr-only"> (GitHub, opens in a new tab)</span>
+				</a>
+			</h3>
+			<Highlights summary={project.summary} items={project.highlights} />
+		</article>
 	);
 }

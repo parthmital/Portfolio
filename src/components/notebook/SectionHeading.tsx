@@ -1,7 +1,5 @@
-import { Eyebrow } from "./Eyebrow";
-
 type Props = {
-	eyebrow?: string;
+	eyebrow: string;
 	title: string;
 	annotation?: string;
 };
@@ -9,7 +7,9 @@ type Props = {
 export function SectionHeading({ eyebrow, title, annotation }: Props) {
 	return (
 		<header className="mb-7">
-			{eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+			<div className="font-hand text-graphite-soft mb-2 text-base">
+				{eyebrow}
+			</div>
 			<h2 className="font-arch text-graphite pencil-underline inline-block text-3xl md:text-4xl">
 				{title}
 			</h2>

@@ -8,18 +8,35 @@ const themeColors: Record<Theme, string> = {
 	dark: "#000000",
 };
 
-function getInitialTheme(): Theme {
-	if (typeof window === "undefined") return "dark";
-	return window.localStorage.getItem(storageKey) === "light" ? "light" : "dark";
+// Storage can throw when blocked (private browsing, disabled cookies); the
+// theme then still works for the visit but is not remembered.
+function readStoredTheme(): Theme {
+	try {
+		return window.localStorage.getItem(storageKey) === "light"
+			? "light"
+			: "dark";
+	} catch {
+		return "dark";
+	}
+}
+
+function storeTheme(theme: Theme) {
+	try {
+		window.localStorage.setItem(storageKey, theme);
+	} catch {
+		// Not persisted; see readStoredTheme.
+	}
 }
 
 /** Persisted light/dark theme applied to the document root. */
 export function useTheme() {
-	const [theme, setTheme] = useState<Theme>(getInitialTheme);
+	const [theme, setTheme] = useState<Theme>(() =>
+		typeof window === "undefined" ? "dark" : readStoredTheme(),
+	);
 
 	useEffect(() => {
 		document.documentElement.dataset.theme = theme;
-		window.localStorage.setItem(storageKey, theme);
+		storeTheme(theme);
 		document
 			.querySelector('meta[name="theme-color"]')
 			?.setAttribute("content", themeColors[theme]);

@@ -1,17 +1,12 @@
 import { profile } from "@/data";
 import { ContactCard, PaperSheet, SectionHeading } from "@/components/notebook";
+import { pageEyebrow } from "@/site/navigation";
 
 export function Contact() {
-	const links = [
-		{ label: "Email", value: profile.email, href: `mailto:${profile.email}` },
-		{ label: "GitHub", value: "@parthmital", href: profile.github },
-		{ label: "LinkedIn", value: "in/parthmital", href: profile.linkedin },
-	];
-
 	return (
 		<PaperSheet id="contact" variant="alt">
 			<SectionHeading
-				eyebrow="// page 7"
+				eyebrow={pageEyebrow("contact")}
 				title="Get in touch"
 				annotation="If you find something interesting here, we will probably get along."
 			/>
@@ -24,13 +19,8 @@ export function Contact() {
 			</div>
 
 			<div className="contact-grid">
-				{links.map((l) => (
-					<ContactCard
-						key={l.label}
-						label={l.label}
-						value={l.value}
-						href={l.href}
-					/>
+				{profile.contacts.map((contact) => (
+					<ContactCard key={contact.label} {...contact} />
 				))}
 			</div>
 		</PaperSheet>

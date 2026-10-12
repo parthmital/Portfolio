@@ -1,26 +1,12 @@
 import { about } from "@/data";
 import { PaperSheet, SectionHeading } from "@/components/notebook";
-
-const workingNotes = [
-	{
-		label: "Software",
-		text: "Production web systems, APIs, databases, deployment, and workflow tooling.",
-	},
-	{
-		label: "AI",
-		text: "Computer vision, OCR, LLM pipelines, model training, and evaluation.",
-	},
-	{
-		label: "Creative",
-		text: "Design, 3D, video, and audio tools used to make outputs feel considered.",
-	},
-];
+import { pageEyebrow } from "@/site/navigation";
 
 export function About() {
 	return (
 		<PaperSheet id="about" variant="alt">
 			<SectionHeading
-				eyebrow="// page 2"
+				eyebrow={pageEyebrow("about")}
 				title="About"
 				annotation="What I work on and how I go about it."
 			/>
@@ -32,7 +18,7 @@ export function About() {
 					</p>
 
 					<div className="about-pillars">
-						{workingNotes.map((note) => (
+						{about.notes.map((note) => (
 							<div key={note.label} className="border-paper-edge border-t pt-3">
 								<div className="font-hand text-graphite-muted text-base">
 									{note.label}

@@ -1,28 +1,14 @@
 import { ArrowRight } from "lucide-react";
 import { profile } from "@/data";
 import { logoUrl } from "@/site/navigation";
-import { Button, PaperSheet } from "@/components/notebook";
-
-const focusAreas = [
-	"Production software",
-	"Applied AI systems",
-	"Data-heavy workflows",
-	"Creative tooling",
-];
-
-const proofPoints = [
-	{ value: "591", label: "Vitest tests in ERP CI" },
-	{ value: "114K+", label: "legacy records migrated" },
-	{ value: "24", label: "MRI architectures benchmarked" },
-	{ value: "60+", label: "daily production users" },
-];
+import { ButtonLink, PaperSheet } from "@/components/notebook";
 
 export function Hero() {
 	return (
 		<PaperSheet
 			id="top"
 			withMargin={false}
-			className="hero-sheet relative overflow-hidden py-6 md:py-12 lg:py-14"
+			className="overflow-hidden py-6 md:py-12 lg:py-14"
 		>
 			<div className="grid gap-5 md:gap-8">
 				<div>
@@ -31,7 +17,6 @@ export function Hero() {
 							src={logoUrl}
 							alt=""
 							className="theme-logo h-4 w-auto opacity-80"
-							aria-hidden="true"
 						/>
 						<span>// page 1: working file</span>
 					</div>
@@ -46,32 +31,33 @@ export function Hero() {
 						{profile.tagline}
 					</p>
 
-					<div className="field-strip mt-5 max-w-2xl md:mt-7">
-						{focusAreas.map((label) => (
-							<span key={label}>{label}</span>
+					<ul className="field-strip mt-5 max-w-2xl md:mt-7">
+						{profile.focusAreas.map((label) => (
+							<li key={label}>{label}</li>
 						))}
-					</div>
+					</ul>
 
 					<div className="mt-6 flex flex-wrap items-center gap-3 md:mt-8">
-						<Button variant="filled" href="#projects" className="gap-2">
-							See projects <ArrowRight className="h-4 w-4" />
-						</Button>
-						<Button variant="outline" href="#contact">
-							Get in touch
-						</Button>
+						<ButtonLink variant="filled" href="#projects">
+							See projects <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
+						</ButtonLink>
+						<ButtonLink href="#contact">Get in touch</ButtonLink>
 					</div>
 				</div>
 
-				<aside className="hero-proof" aria-label="Portfolio proof points">
-					{proofPoints.map((point) => (
-						<div key={point.label}>
-							<div className="hero-proof-value">{point.value}</div>
-							<div className="text-graphite-soft mt-3 max-w-[12rem] text-sm leading-relaxed">
+				<dl className="hero-proof">
+					{profile.proofPoints.map((point) => (
+						<div
+							key={point.label}
+							className="flex flex-col-reverse justify-end gap-3"
+						>
+							<dt className="text-graphite-soft max-w-[12rem] text-sm leading-relaxed">
 								{point.label}
-							</div>
+							</dt>
+							<dd className="hero-proof-value">{point.value}</dd>
 						</div>
 					))}
-				</aside>
+				</dl>
 			</div>
 		</PaperSheet>
 	);

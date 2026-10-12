@@ -43,3 +43,10 @@ export const navSections: NavSection[] = [
 export const logoUrl = "/Portfolio Website.svg";
 
 export const navSectionIds = navSections.map(({ id }) => id);
+
+/** Notebook page label for a section; the hero is page 1. */
+export function pageEyebrow(id: string) {
+	const index = navSectionIds.indexOf(id);
+	if (index === -1) throw new Error(`Unknown section id: ${id}`);
+	return `// page ${index + 2}`;
+}
