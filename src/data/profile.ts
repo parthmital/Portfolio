@@ -29,27 +29,32 @@ export const about: About = {
 export const experience: Experience = [
 	{
 		company: "Concept Marketing",
-		role: "Sole Software Developer & Maintainer (Contract)",
-		period: "June 2026 – July 2026",
-		location: "Vadodara, India",
+		role: "Sole Software Developer and Maintainer (Contract)",
+		period: "June 2026 to July 2026",
+		summary:
+			"Sole developer of a mission-critical ERP/CRM modernisation & cloud migration for a Vadodara HVAC dealership with 60+ employees, all daily users, & a turnover of several crores.",
 		bullets: [
-			"Migrated legacy on-premise ASP.NET ERP to 24/7 Next.js, TypeScript, Prisma, & PostgreSQL on Vercel + Supabase; ported 114K+ records across 42 tables with zero data loss, eliminating single-PC server bottlenecks.",
-			"Partnered directly with operational staff (6–8 hrs daily software usage) to consolidate fragmented tools into unified workflows for technician dispatch, AMC contracts, billing, inventory variances, & automated PDF invoicing.",
-			"Secured internet-facing operations with role-based route access, CSRF validation, & PostgreSQL rate limits; scheduled AES-256 encrypted offsite backups to Google Drive with 30-day retention via GitHub Actions.",
-			"Engineered test suite with 587 Vitest unit & route tests across 85 files; delivered production platform managing 2.8K clients, 28K service calls, & 60+ users with ongoing solo maintenance.",
+			"Replaced a legacy ASP.NET, C# & SQL Server app bound to one office PC with a 24/7 platform on any device, incl. technicians' phones, keeping familiar workflows & branding",
+			"Migrated 114K+ records from 42 tables to Supabase PostgreSQL with zero data loss & no disruption",
+			"Built Next.js, TypeScript & Prisma modules for service calls, dispatch, AMCs, quotations, invoicing, inventory & reports, now holding 32,430 service calls & 2,935 customers",
+			"Secured it with signed httpOnly sessions, deny-by-default RBAC, Zod, rate limits, nonce CSP & redacted logs; automated daily crons & AES-256 encrypted backups",
+			"Added a 12-step CI with secret scanning, 591 Vitest tests & Playwright E2E",
+			"Owned it end to end, turning feedback from staff using it 6–8 hrs a day into features",
 		],
 	},
 	{
 		company: "LearnLine Edustation (IntelGrader)",
 		role: "AI Engineer Intern",
-		period: "June 2026 – July 2026",
-		location: "Remote",
+		period: "June 2026 to July 2026",
+		summary:
+			"AI Engineer Intern at an early-stage edtech startup, hired off-campus via Wellfound on my crossout detection assignment; owned production projects across AI/ML, agentic AI, full-stack & Android with high autonomy.",
 		bullets: [
-			"Architected native Android capture app in Kotlin, Jetpack Compose, CameraX, & OpenCV; implemented real-time quad stability auto-capture across 7 stable frames, perspective rectification, & native JavaScript bridge.",
-			"Trained multi-task MobileNetV3 to score image quality & 7 defect flags; applied float16 TFLite quantization, shrinking model size by 82.5% to 2.19 MB with 2.55 ms edge inference latency.",
-			"Fine-tuned YOLOv8s struck-out text detector via 2-phase training; integrated downstream masking to cut OCR token clutter by 7.11% while maintaining 80% to 96% semantic similarity via RapidFuzz.",
-			"Designed native PyMuPDF pipeline extracting 1,033 questions & 383 visuals; generated dual-GPU EasyOCR cache across 4,574 textbook pages with AWS Bedrock structured LLM parsing.",
-			"Directed technical implementation with co-founders to deploy autonomous educational web generator across 6 archetypes, integrating AWS Bedrock LessonSpec synthesis with Playwright & axe-core accessibility gates.",
+			"Built a Kotlin, CameraX & OpenCV Android app with a native camera via JS bridge, Google Sign-In, GraphQL upload, auto-capture, TFLite page segmentation & PDF export",
+			"Trained a MobileNetV3-Small image-quality model on 7,000 images grown from 248: 0.65% false accept rate, 2.19 MB float16 TFLite, 2.55 ms inference",
+			"Fine-tuned YOLOv8s on 100 annotated sheets to route crossed-out regions; masking them cut EasyOCR token clutter 7.11%",
+			"Built PyMuPDF & 2-GPU EasyOCR + AWS Bedrock ingestion: 1,033 questions from a 280-page textbook & 216 verified JEE questions",
+			"Built Bedrock lesson-page generation gated on Playwright & axe-core, plus Groq, Kokoro & Stable Diffusion narrated video pipelines",
+			"Trained a ResNet50 writer-embedding model (0.796 NMI) to map submissions to students",
 		],
 	},
 ];

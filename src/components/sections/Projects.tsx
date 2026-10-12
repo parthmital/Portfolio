@@ -8,7 +8,7 @@ export function Projects() {
 			<SectionHeading
 				eyebrow="// page 4"
 				title="Selected Projects"
-				annotation="The resume projects first, plus a few fuller builds."
+				annotation="AI, data, and full-stack builds, each linked to its repository."
 			/>
 
 			<div className="project-grid">

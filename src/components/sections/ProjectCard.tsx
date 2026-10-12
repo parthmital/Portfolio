@@ -21,9 +21,6 @@ export function ProjectCard({ project, index }: Props) {
 				<span>{project.title}</span>
 				<ExternalLink className="text-graphite-muted group-hover:text-graphite h-3.5 w-3.5 shrink-0 transition-colors" />
 			</a>
-			<p className="font-scrawl text-graphite-soft mt-2 text-base leading-snug">
-				{project.tagline}
-			</p>
 
 			<div className="mt-4">
 				<p

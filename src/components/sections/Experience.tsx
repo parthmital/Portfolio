@@ -28,13 +28,7 @@ function ExperienceCard({ entry, index }: ExperienceCardProps) {
 						<h3 className="font-arch text-graphite mt-2 text-2xl leading-tight">
 							{entry.role}
 						</h3>
-						<p className="text-graphite-soft mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm">
-							<span>{entry.company}</span>
-							<span aria-hidden="true" className="text-graphite-muted">
-								/
-							</span>
-							<span className="text-graphite-muted">{entry.location}</span>
-						</p>
+						<p className="text-graphite-soft mt-2 text-sm">{entry.company}</p>
 					</div>
 				</div>
 
@@ -43,7 +37,11 @@ function ExperienceCard({ entry, index }: ExperienceCardProps) {
 				</div>
 			</div>
 
-			<ul className="marker:text-graphite-muted mt-4 list-disc space-y-2 pl-5">
+			<p className="text-graphite mt-4 text-sm leading-relaxed">
+				{entry.summary}
+			</p>
+
+			<ul className="marker:text-graphite-muted mt-3 list-disc space-y-2 pl-5">
 				{visibleBullets.map((bullet) => (
 					<li
 						key={bullet}

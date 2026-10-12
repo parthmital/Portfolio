@@ -11,9 +11,9 @@ const focusAreas = [
 ];
 
 const proofPoints = [
-	{ value: "58", label: "ERP API routes rebuilt" },
+	{ value: "591", label: "Vitest tests in ERP CI" },
 	{ value: "114K+", label: "legacy records migrated" },
-	{ value: "21", label: "MRI models benchmarked" },
+	{ value: "24", label: "MRI architectures benchmarked" },
 	{ value: "60+", label: "daily production users" },
 ];
 

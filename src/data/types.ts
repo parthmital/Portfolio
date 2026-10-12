@@ -1,7 +1,6 @@
 export interface Project {
 	id: string;
 	title: string;
-	tagline: string;
 	summary: string;
 	github: string;
 }
@@ -24,7 +23,7 @@ export interface ExperienceEntry {
 	company: string;
 	role: string;
 	period: string;
-	location: string;
+	summary: string;
 	bullets: string[];
 }
 

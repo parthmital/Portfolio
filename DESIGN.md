@@ -32,7 +32,7 @@ Four families, loaded from Google Fonts in `index.html`:
 | ------- | ------------------- | --------------- | ----------------------------------------------- |
 | Body    | Inter               | `font-sans`     | Paragraphs, labels, buttons, navigation         |
 | Display | Architects Daughter | `font-arch`     | `h1` to `h4`, project titles, values, logo text |
-| Scrawl  | Kalam               | `font-scrawl`   | Role line, taglines, dates, skill tags          |
+| Scrawl  | Kalam               | `font-scrawl`   | Role line, dates, skill tags                    |
 | Hand    | Caveat              | `font-hand`     | Eyebrows, indices, annotations, hero stamp      |
 
 Scale (utilities in `styles.css` and the sizes used in components):

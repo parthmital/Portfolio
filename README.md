@@ -176,7 +176,7 @@ Settings for any static host:
 
 ## Repository metrics
 
-Measured on 2 October 2026 with Node.js v24.15.0 and npm 12.1.0.
+Measured on 12 October 2026 with Node.js v24.15.0 and npm 12.2.0.
 
 | Metric                  | Value                                   | Source                                         |
 | ----------------------- | --------------------------------------- | ---------------------------------------------- |
@@ -187,11 +187,11 @@ Measured on 2 October 2026 with Node.js v24.15.0 and npm 12.1.0.
 | Experience entries      | 2                                       | `src/data/profile.ts`                          |
 | Education entries       | 3                                       | `src/data/profile.ts`                          |
 | Skill groups            | 5 technical, 4 creative                 | `src/data/profile.ts`                          |
-| Source lines in `src`   | 1807 (27 files)                         | `npm run dupes`                                |
+| Source lines in `src`   | 1800 (27 files)                         | `npm run dupes`                                |
 | Duplicated lines        | 0                                       | `npm run dupes`                                |
 | Modules checked by arch | 34, 0 violations                        | `npm run arch`                                 |
-| JS bundle               | 248.73 kB raw, 79.94 kB gzip            | `npm run build`                                |
-| CSS bundle              | 28.65 kB raw, 6.56 kB gzip              | `npm run build`                                |
+| JS bundle               | 247.74 kB raw, 79.75 kB gzip            | `npm run build`                                |
+| CSS bundle              | 29.40 kB raw, 6.67 kB gzip              | `npm run build`                                |
 | Environment variables   | 0                                       | No `import.meta.env` or `process.env` in `src` |
 | Test coverage           | Not measured in the current repository. | No test framework configured                   |
 
