@@ -150,11 +150,11 @@ All text shown on the page lives in `src/data`, typed by `src/data/types.ts`:
 | Email, GitHub, and LinkedIn links       | `src/data/profile.ts` (`contacts`)                      |
 | About paragraphs and notes              | `src/data/profile.ts` (`about`)                         |
 | Experience, education, and skill groups | `src/data/profile.ts`                                   |
-| Projects                                | `src/data/projects.ts`                                  |
+| Projects and open-source contributions  | `src/data/projects.ts`                                  |
 | Resume file                             | `public/Parth_Mital_Resume.pdf`                         |
 | Canonical URL or last modified date     | `index.html`, `public/robots.txt`, `public/sitemap.xml` |
 
-Projects and experience entries each have a one-sentence `summary` and a `highlights` list. Section headings and their one-line annotations are written in the section components. Anything placed in these files is shipped to the browser.
+Projects, open-source contributions, and experience entries each have a `summary` and a `highlights` list, matching their LinkedIn descriptions: the opening line is the summary and each bullet is a highlight. Section headings and their one-line annotations are written in the section components. Anything placed in these files is shipped to the browser.
 
 ## Code quality checks
 
@@ -182,22 +182,22 @@ Settings for any static host:
 
 ## Repository metrics
 
-Measured on 12 October 2026 with Node.js v24.15.0 and npm 12.2.0.
+Measured on 23 November 2026 with Node.js v24.15.0 and npm 12.2.2.
 
 | Metric                  | Value                                   | Source                                         |
 | ----------------------- | --------------------------------------- | ---------------------------------------------- |
 | npm scripts             | 11                                      | `package.json`                                 |
 | Direct dependencies     | 7 runtime, 19 dev                       | `package.json`                                 |
 | Page sections           | 7                                       | `src/App.tsx`                                  |
-| Projects                | 5                                       | `src/data/projects.ts`                         |
+| Projects                | 5, plus 1 open-source contribution      | `src/data/projects.ts`                         |
 | Experience entries      | 2                                       | `src/data/profile.ts`                          |
 | Education entries       | 3                                       | `src/data/profile.ts`                          |
 | Skill groups            | 5 technical, 4 creative                 | `src/data/profile.ts`                          |
-| Source lines in `src`   | 1798 (30 files, tests included)         | `npm run dupes`                                |
+| Source lines in `src`   | 1850 (30 files, tests included)         | `npm run dupes`                                |
 | Duplicated lines        | 0                                       | `npm run dupes`                                |
 | Modules checked by arch | 40, 0 violations                        | `npm run arch`                                 |
-| JS bundle               | 247.90 kB raw, 79.73 kB gzip            | `npm run build`                                |
-| CSS bundle              | 27.77 kB raw, 6.49 kB gzip              | `npm run build`                                |
+| JS bundle               | 247.55 kB raw, 79.58 kB gzip            | `npm run build`                                |
+| CSS bundle              | 27.56 kB raw, 6.43 kB gzip              | `npm run build`                                |
 | Environment variables   | 0                                       | No `import.meta.env` or `process.env` in `src` |
 | Tests                   | 9 in 3 files                            | `npm test`                                     |
 | Test coverage           | Not measured in the current repository. | No coverage provider configured                |

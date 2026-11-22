@@ -100,4 +100,4 @@ Duplicate code in `src` (TS, TSX, CSS, tests included) is blocked by `npm run du
 - More than one page or deep links: add a router and move to `src/features/<page>` folders.
 - Any logic beyond rendering (filtering, search, forms): add Testing Library on top of the existing Vitest setup, with tests next to the code.
 - Any runtime config (analytics, API keys): add validated `import.meta.env` config in `src/config.ts` and `.env.example`.
-- JS bundle over about 300 kB gzip (currently 79.73 kB): lazy load sections below the fold.
+- JS bundle over about 300 kB gzip (currently 79.58 kB): lazy load sections below the fold.

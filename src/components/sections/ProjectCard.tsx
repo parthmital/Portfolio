@@ -3,15 +3,20 @@ import type { Project } from "@/data";
 import { Highlights } from "@/components/notebook";
 import { newTabLinkProps } from "@/lib/links";
 
-type Props = { project: Project; index: number };
+type Props = {
+	project: Project;
+	/** Handwritten index label, for example "case 01". */
+	label: string;
+	/** h4 when the card sits under a sub-heading inside the section. */
+	headingLevel?: "h3" | "h4";
+};
 
-export function ProjectCard({ project, index }: Props) {
+export function ProjectCard({ project, label, headingLevel = "h3" }: Props) {
+	const Heading = headingLevel;
 	return (
 		<article className="project-card notecard flex h-full flex-col">
-			<span className="project-index">
-				case {String(index + 1).padStart(2, "0")}
-			</span>
-			<h3 className="font-arch mt-1 text-2xl leading-tight">
+			<span className="project-index">{label}</span>
+			<Heading className="font-arch mt-1 text-2xl leading-tight">
 				<a
 					href={project.github}
 					{...newTabLinkProps(project.github)}
@@ -24,7 +29,7 @@ export function ProjectCard({ project, index }: Props) {
 					/>
 					<span className="sr-only"> (GitHub, opens in a new tab)</span>
 				</a>
-			</h3>
+			</Heading>
 			<Highlights summary={project.summary} items={project.highlights} />
 		</article>
 	);

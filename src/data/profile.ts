@@ -19,9 +19,9 @@ export const profile: Profile = {
 		"Creative tooling",
 	],
 	proofPoints: [
-		{ value: "591", label: "Vitest tests in ERP CI" },
-		{ value: "114K+", label: "legacy records migrated" },
-		{ value: "24", label: "MRI architectures benchmarked" },
+		{ value: "599", label: "Vitest tests in ERP CI" },
+		{ value: "127K+", label: "legacy rows migrated" },
+		{ value: "12", label: "MRI architectures benchmarked" },
 		{ value: "60+", label: "daily production users" },
 	],
 	contacts: [
@@ -69,32 +69,32 @@ export const about: About = {
 export const experience: Experience = [
 	{
 		company: "Concept Marketing",
-		role: "Sole Software Developer and Maintainer (Contract)",
+		role: "Sole Developer & Maintainer (Contract)",
 		period: "June 2026 to July 2026",
 		summary:
-			"Sole developer of a mission-critical ERP/CRM modernisation & cloud migration for a Vadodara HVAC dealership with 60+ employees, all daily users, & a turnover of several crores.",
+			"Sole developer for Concept Marketing, a 60+ person HVAC dealership. Migrated its daily-use ERP from a legacy ASP.NET & C# app tied to one office PC to a web app staff use from any device, with no room for error.",
 		highlights: [
-			"Replaced a legacy ASP.NET, C# & SQL Server app bound to one office PC with a 24/7 platform on any device, incl. technicians' phones, keeping familiar workflows & branding",
-			"Migrated 114K+ records from 42 tables to Supabase PostgreSQL with zero data loss & no disruption",
-			"Built Next.js, TypeScript & Prisma modules for service calls, dispatch, AMCs, quotations, invoicing, inventory & reports, now holding 32,430 service calls & 2,935 customers",
-			"Secured it with signed httpOnly sessions, deny-by-default RBAC, Zod, rate limits, nonce CSP & redacted logs; automated daily crons & AES-256 encrypted backups",
-			"Added a 12-step CI with secret scanning, 591 Vitest tests & Playwright E2E",
-			"Owned it end to end, turning feedback from staff using it 6–8 hrs a day into features",
+			"Rebuilt it in Next.js, Prisma & PostgreSQL on Vercel & Supabase in 2 weeks, company-wide by July 2026",
+			"Migrated 127,264 rows: 31,758 service calls, 2,958 customers, 6,150 machines",
+			"Worked with staff almost daily: fixed legacy bugs, replaced the side tools they relied on with new features, redesigned the UI keeping the familiar layout, added a phone-first technician portal",
+			"Schema refactor: 2,107 signatures from 29.0 MB of PNG to 2.6 MB of SVG, database 107 MB → 75 MB, parity proven over ~4,500 API responses & 75 write steps",
+			"Row-level security, nonce-based CSP, HMAC-SHA256 sessions & Zod validation",
+			"Nightly GPG-encrypted off-site backups & 599 passing Vitest tests in CI",
+			"Sole owner of fixes & features since launch",
 		],
 	},
 	{
-		company: "LearnLine Edustation (IntelGrader)",
+		company: "IntelGrader (LearnLine Edustation)",
 		role: "AI Engineer Intern",
 		period: "June 2026 to July 2026",
 		summary:
-			"AI Engineer Intern at an early-stage edtech startup, hired off-campus via Wellfound on my crossout detection assignment; owned production projects across AI/ML, agentic AI, full-stack & Android with high autonomy.",
+			"AI Engineer Intern at IntelGrader, an early-stage startup automating grading of handwritten work. Won the role via its assignment round, then built AI prototypes from answer-sheet capture to study content.",
 		highlights: [
-			"Built a Kotlin, CameraX & OpenCV Android app with a native camera via JS bridge, Google Sign-In, GraphQL upload, auto-capture, TFLite page segmentation & PDF export",
-			"Trained a MobileNetV3-Small image-quality model on 7,000 images grown from 248: 0.65% false accept rate, 2.19 MB float16 TFLite, 2.55 ms inference",
-			"Fine-tuned YOLOv8s on 100 annotated sheets to route crossed-out regions; masking them cut EasyOCR token clutter 7.11%",
-			"Built PyMuPDF & 2-GPU EasyOCR + AWS Bedrock ingestion: 1,033 questions from a 280-page textbook & 216 verified JEE questions",
-			"Built Bedrock lesson-page generation gated on Playwright & axe-core, plus Groq, Kokoro & Stable Diffusion narrated video pipelines",
-			"Trained a ResNet50 writer-embedding model (0.796 NMI) to map submissions to students",
+			"Android capture app (Kotlin, Jetpack Compose, CameraX, OpenCV) with TFLite page detection & an on-device MobileNetV3 quality gate that triggers retakes: 2.19 MB, 82.5% smaller than Keras",
+			"Sorted 3,946 anonymised pages into submissions by handwriting: ResNet50 + supervised contrastive loss, ARI 0.3719 & NMI 0.7959 on 588 held-out pages",
+			"YOLOv8s crossed-out text detector, cutting OCR token clutter 7.11%",
+			"Parsed a CBSE textbook into 1,033 questions & built a curated 216-question JEE bank from 134 papers",
+			"AWS Bedrock lesson generator with an LLM critic, plus Groq & Kokoro doodle lecture videos",
 		],
 	},
 ];

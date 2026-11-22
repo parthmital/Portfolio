@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import App from "./App";
-import { experience, profile, projects } from "@/data";
+import { experience, openSourceContributions, profile, projects } from "@/data";
 import { navSectionIds } from "@/site/navigation";
 
 const html = renderToStaticMarkup(<App />);
@@ -36,8 +36,8 @@ describe("App", () => {
 		}
 	});
 
-	it("renders every project and experience entry", () => {
-		for (const project of projects) {
+	it("renders every project, contribution, and experience entry", () => {
+		for (const project of [...projects, ...openSourceContributions]) {
 			expect(
 				doc.querySelector(`a[href="${project.github}"] span`)?.textContent,
 			).toBe(project.title);

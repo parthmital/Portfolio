@@ -6,6 +6,6 @@ export {
 	technicalSkillGroups,
 	creativeSkillGroups,
 } from "./profile";
-export { projects } from "./projects";
+export { projects, openSourceContributions } from "./projects";
 
 export type { Project, ExperienceEntry, SkillGroup } from "./types";

@@ -4,7 +4,7 @@ The portfolio is styled as a graphite-on-paper working notebook: each section is
 
 ## Signature idea
 
-Numbered notebook pages. Every section is a `PaperSheet` with 35px ruled lines, an optional red margin line, and a handwritten eyebrow such as `// page 3`, numbered from the section order in `src/site/navigation.ts`. Projects are labelled `case 01`, experience entries `record 01`. This one idea carries the identity; nothing else is decorative.
+Numbered notebook pages. Every section is a `PaperSheet` with 35px ruled lines, an optional red margin line, and a handwritten eyebrow such as `// page 3`, numbered from the section order in `src/site/navigation.ts`. Projects are labelled `case 01`, open-source contributions `contribution 01` (under an `h3` "Open source" sub-heading at the end of the Projects page, so the mobile nav keeps six items), experience entries `record 01`. This one idea carries the identity; nothing else is decorative.
 
 ## Palette
 

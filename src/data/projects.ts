@@ -5,13 +5,13 @@ export const projects: Project[] = [
 		id: "neuroscan",
 		title: "NeuroScan AI",
 		summary:
-			"Built a brain tumour MRI platform backed by 3 ML pipelines, a 24-architecture benchmark & 2 research papers, in a 2-person team under a faculty advisor.",
+			"Brain MRI tumour platform: upload 4 MRI sequences, get detection, tumour type & a 3D tumour outline in one report.",
 		highlights: [
-			"Benchmarked 9 2D backbones for detection & classification & 6 3D segmentation networks (15 unique) with the same splits & budgets, removing duplicates by perceptual hashing",
-			"Reached 0.9942 fold-ensemble detection accuracy & 0.8199 mean Dice (UNet) on BraTS 2020, deploying EfficientNet-B0 & a 1.4M-parameter VNet (0.7965 Dice)",
-			"Built a FastAPI & React app that runs detection, subtyping & 3D segmentation on NIfTI uploads in about 4 s per scan, with a multi-planar & vtk.js 3D viewer & PDF/CSV reports",
-			"Secured it with bcrypt, TOTP 2FA, CSRF checks & owner checks, plus 61 backend & 39 frontend tests & CI security scans",
-			"Co-wrote 2 Elsevier-format papers, now complete & under faculty review",
+			"Benchmarked 9 2D backbones & 3 3D segmentation nets with Holm-corrected tests. Best detector: 99.42% on 171 unseen scans",
+			"SegResNet: 0.8717 Dice internal, 0.7967 on 60 external BraTS-Africa cases",
+			"Model disagreement flags bad outlines (AUROC 0.9932/0.8704)",
+			"FastAPI, React & vtk.js app, 103 tests",
+			"2 papers drafted for Engineering Applications of AI",
 		],
 		github: "https://github.com/parthmital/NeuroScan-AI",
 	},
@@ -19,53 +19,73 @@ export const projects: Project[] = [
 		id: "obsidian-flask",
 		title: "The Obsidian Flask: RAG-Driven NPC Narrative Engine",
 		summary:
-			"Built a full-stack text adventure where LLM-driven NPCs talk freely while code keeps the world state consistent, & evaluated it as a research study.",
+			"Text adventure where LLM NPCs talk freely but code owns the game state, so they can't forget facts, invent items or break rules.",
 		highlights: [
-			"Built an 8-node LangGraph turn pipeline in FastAPI that retrieves memory, calls Groq, parses strict JSON & validates every world change before an append-only SQLite log",
-			"Combined an 8-turn buffer with FAISS long-term memory scoped by location & NPC, with a React & TypeScript client over REST & WebSockets",
-			"Benchmarked it on Kaggle with vLLM across 7 worlds, 10 memory conditions & pre-registered hypothesis tests",
-			"Reached 87.7% recall of facts 20+ turns old & cut attack success to 2.9% from 16.2% with direct writes, at 0.0% false rejection & 0.039 ms P95 validation",
-			"Rebuilt state from the log in 100% of sessions, & wrote the study up as an IEEE-format paper",
+			"9-node LangGraph pipeline: RAG memory → LLM → strict JSON → rule validator → append-only event log",
+			"Validator let 0 of 26,273 unlawful changes pass. Crash recovery 300/300, up from 93/300",
+			"Scoped memory recalled 63.7% of facts 20+ turns old vs 0% for a same-budget window",
+			"13 memory designs, 7 worlds, 3 model families",
+			"Paper drafted for IEEE Transactions on Games",
 		],
 		github: "https://github.com/parthmital/RAG-Driven-NPC-Narrative-Engine",
 	},
 	{
-		id: "laptop-price-pipeline",
-		title: "Laptop Price and Specification Pipeline",
+		id: "neuralss",
+		title: "NeuralSS: Neural Super-Sampling & Frame Generation",
 		summary:
-			"Built a pipeline that scrapes laptop listings from Reliance Digital, Vijay Sales & HP's India store into a comparable 42-field catalogue with price history, plus a web app to find the cheapest exact configuration.",
+			"Open, hardware-agnostic alternative to vendor-locked game upscaling & frame generation (DLSS, XeSS), built only from ONNX-exportable ops.",
 		highlights: [
-			"Extracted specs with deterministic rules first, then K2 Horizon 3.7B on 2 Tesla T4 GPUs, keeping every raw page & per-field provenance",
-			"Reached 0.9881 field accuracy with a 0.020 hallucination rate on 29 hand-labelled listings, & 1.0 match precision over 406 pairs",
-			"Loaded SQLite with price history, freshness labels, run metrics, alerts & the lowest comparable price per configuration; the latest run took 26 min 55 s",
-			"Built Laptop Ledger in Next.js: every store's price side by side, 42 laptop-specific filters & a spec sheet showing where each value came from",
+			"Recurrent 3x upscaler: +1.2 to 2.2 dB PSNR-Y over bicubic on 5 suites (27/28 clips), +2.8 to 4.9 dB over TAAU with engine data",
+			"2x to 6x frame generator beats RIFE 4.26 on Middlebury: 34.23 vs 33.34 dB",
+			"Leakage-audited data: 12,300 items, 0 cross-split duplicates",
+			"Paper drafted for J. Real-Time Image Processing",
 		],
-		github: "https://github.com/parthmital/Laptop-Data-Scraper",
-	},
-	{
-		id: "solari-hub-demand-forecasting",
-		title: "Solari Hub Demand Forecasting",
-		summary:
-			"Forecast daily orders for 1,115 micro-fulfilment hubs over a 42-day window from 970,379 rows of history, scored on RMSLE.",
-		highlights: [
-			"Engineered leakage-safe hub history features & a rolling-origin back-test, keeping the validation block untouched for an honest score",
-			"Trained XGBoost & CatBoost forecasters on 2 GPUs with 4 parallel workers, including 6 multi-gap direct models that each use the freshest allowed lags",
-			"Blended & calibrated the models with per-hub correction, reaching 0.09432 validation RMSLE, about 35% below the best naive baseline, with 7.18% MAPE",
-			"Predicted all 46,830 test rows, passing 13 of 13 submission checks",
-		],
-		github: "https://github.com/parthmital/Solari-Hub-Demand-Forecaster",
+		github:
+			"https://github.com/parthmital/High-Throughput-Neural-Super-Sampling",
 	},
 	{
 		id: "ai-camera-match-for-blender",
 		title: "AI Camera Match for Blender",
 		summary:
-			"Built a Blender add-on that matches a 3D camera to a single photo automatically, with no vanishing lines to draw.",
+			"Blender add-on that matches a 3D camera to one photo with no hand-drawn vanishing lines, automating the fSpy workflow for VFX & archviz artists.",
 		highlights: [
-			"Ran GeoCalib & MoGe in a separate process & virtual environment to estimate focal length, lens distortion, roll, pitch & camera height from a fitted floor plane",
-			"Built the matched camera, undistorted background plate, floor & textured proxy mesh in Blender, & exported fSpy-compatible project files",
-			"Added a one-click solver installer for CUDA or CPU PyTorch builds, plus headless batch use",
-			"Solved images in 5.6 to 38.9 s on a 4 GB GTX 1650; re-rendering through the solved camera reproduced the photo with 95.1% pixel coverage",
+			"GeoCalib estimates focal length, distortion & gravity, MoGe-2 metric depth sets camera height, in an isolated solver process",
+			"Builds camera, undistorted plate, floor & textured proxy mesh, exports .fspy",
+			"29.1 to 38.9 s per solve on a 4 GB GTX 1650",
+			"Proxy re-render matched the plate: 95.1% pixel coverage, 0 px shift",
 		],
 		github: "https://github.com/parthmital/Blender-AI-Camera-Match",
+	},
+	{
+		id: "laptop-price-pipeline",
+		title: "Laptop Price & Specification Pipeline",
+		summary:
+			"Free prototype for PickPCParts, an Indian price comparison site that updates listings largely by hand, automating laptop prices & specs.",
+		highlights: [
+			"Scrapes 3 stores, then spec-table rules + a local K2 Horizon 3.7B LLM fill a 42-field schema with per-field provenance",
+			"0.9881 field accuracy, 0.020 hallucination rate on 756 labelled cells",
+			"Cross-store matching: precision 1.0, recall 0.857",
+			"SQLite price history & Next.js comparison app",
+			"Costed at ~Rs 25 to 100/month on their server",
+		],
+		github: "https://github.com/parthmital/Laptop-Data-Scraper",
+	},
+];
+
+/** Upstream open-source work, linked to the merged pull request. */
+export const openSourceContributions: Project[] = [
+	{
+		id: "uad-ng",
+		title: "Universal Android Debloater (UAD-ng)",
+		summary:
+			"Open-source Rust GUI & CLI that removes Android bloatware over ADB without root. I found bugs while using it & proposed fixes in an 18-commit PR.",
+		highlights: [
+			"5 fixes merged upstream in #1517 with co-author credit",
+			"Recovery from invalid list downloads & cache, panic-free backup restore with correct indexes, numeric release-version comparison",
+			"Least-privilege CI tokens & config tests isolated in temp dirs",
+			"Credited commits: 78.1% of the merged PR's added lines",
+		],
+		github:
+			"https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/pull/1517",
 	},
 ];
